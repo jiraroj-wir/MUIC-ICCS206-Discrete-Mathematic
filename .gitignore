@@ -11,3 +11,6 @@
 *.nav
 *.snm
 *.vrb
+
+# macOS metadata
+.DS_Store
