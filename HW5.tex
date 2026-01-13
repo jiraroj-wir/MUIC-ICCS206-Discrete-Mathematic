@@ -1,0 +1,72 @@
+\newcommand{\hmwkTitle}{Homework 5}
+\newcommand{\hmwkDueDate}{Sunday, October 24, 2021}
+\newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 5}
+\input{hw_template.tex}
+
+\section*{Problem 1}
+Find closed-form expressions for the following sums/products.
+\begin{enumerate}[label=\arabic*.]
+    \item $\displaystyle \sum_{i=1}^n (2i + 1)$
+    \item $\displaystyle \sum_{i=1}^n \sum_{j=1}^m (i + j^2)$
+    \item $\displaystyle \sum_{i=1}^n \sum_{j=1}^m 2^{i+2j}$
+    \item $\displaystyle \prod_{i=1}^n \prod_{j=1}^m 2^i 3^j$
+\end{enumerate}
+
+\section*{Problem 2}
+Use integral bounds to give upper and lower bounds for
+\begin{enumerate}[label=\arabic*.]
+    \item $\displaystyle \sum_{x=1}^n \frac{1}{x^2}$
+    \item $\displaystyle \sum_{x=1}^n \frac{x^2}{3}$
+\end{enumerate}
+
+\section*{Problem 3}
+Bossy wants to build an $n$-story house of cards (pyramid style). Derive a formula for the number of cards required for $n$ stories, and determine how many decks are needed for a 10-story house.
+
+\section*{Problem 4: Data Structure Cheat Sheet}
+Solve or verify the following recurrences (assume $T(1)=1$).
+\begin{enumerate}[label=\arabic*.]
+    \item $T(n) = T(n-1) + n$ (verify by induction).
+    \item $T(n) = T(n-1) + n^3$.
+    \item $T(n) = T(\lfloor n/2 \rfloor) + 1$.
+    \item $T(n) = T(\lfloor n/2 \rfloor) + n$.
+    \item $T(n) = 2T(\lfloor n/2 \rfloor) + n$.
+    \item $T(n) = 2T(\lfloor n/2 \rfloor) + 1$.
+    \item (Optional) $T(n) = 2T(\lfloor n/2 \rfloor) + \log_2 n$.
+\end{enumerate}
+
+\section*{Problem 5}
+For each pair $(f,g)$, determine which of $\{\sim, o, O, \omega, \Omega, \Theta\}$ apply.
+\begin{enumerate}[label=\arabic*.]
+    \item $f(n) = 30n + 900\log n$, $g(n) = n$
+    \item $f(n) = \log n$, $g(n) = n$
+    \item $f(n) = (\log n)^2$, $g(n) = n$
+    \item $f(n) = \sqrt{n}$, $g(n) = (\log n)^{999}$
+    \item $f(n) = n2^n$, $g(n) = n$
+    \item $f(n) = n^2$, $g(n) = 1.0000000001^n$
+    \item $f(n) = 200{,}000$, $g(n) = 1$
+    \item $f(n) = 2^n$, $g(n) = 10^n$
+\end{enumerate}
+
+\section*{Problem 6}
+Solve the recurrences:
+\begin{enumerate}[label=\arabic*.]
+    \item $T_{i+1} = 5T_i - 6T_{i-1}$ with $T_0 = 8$, $T_1 = 17$
+    \item $T_{i+1} = -T_i + 12T_{i-1}$ with $T_0 = 0$, $T_1 = -7$
+\end{enumerate}
+
+\section*{Problem 7: Roulette Trick Redux}
+Consider a deck with $r$ red cards and $b$ black cards. You always bet on red. If you win a turn you receive twice the bet. The bet-update rule is:
+\begin{itemize}
+    \item After a win, bet $w$ times the previous bet.
+    \item After a loss, bet $l$ times the previous bet.
+\end{itemize}
+\begin{enumerate}[label=\arabic*.]
+    \item Show that if $w + l = 2$, the result is independent of the card order.
+    \item Determine the total gain/loss when $w + l = 2$ (in terms of $r,b,w,l$ and starting bet $m$).
+    \item (Optional) With 20 black and 18 red cards, choose $w$ to maximize gain.
+\end{enumerate}
+
+\section*{Problem 8: Coupon Bond}
+A coupon bond with face value $F$, maturity $N$ years, and annual payment $P$ pays $P$ each year, plus $F$ at maturity. If the annual interest rate is $r$, how much should you pay for the bond today?
+
+\end{document}

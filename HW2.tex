@@ -1,0 +1,53 @@
+\newcommand{\hmwkTitle}{Homework 2}
+\newcommand{\hmwkDueDate}{Monday, January 11, 2016}
+\newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 2}
+\input{hw_template.tex}
+
+\section*{Problem 1}
+Use induction to prove
+\[
+1^2 + 2^2 + 3^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}\qquad \forall n \in I^+.
+\]
+
+\section*{Problem 2}
+Use induction to prove
+\[
+1^3 + 2^3 + 3^3 + \cdots + n^3 = (1 + 2 + 3 + \cdots + n)^2, \quad \forall n \in I^+.
+\]
+
+\section*{Problem 3}
+The Fibonacci numbers are defined by $F_0 = 1$, $F_1 = 1$, $F_2 = 2$, $F_{n+1} = F_n + F_{n-1}$. Prove that
+\[
+F_2 + F_4 + F_6 + \cdots + F_{2n} = F_{2n+1} - 1.
+\]
+
+\section*{Problem 4}
+Recall that $a$ is divisible by $b$ if $\exists n \in I$ such that $a = nb$ (denoted $b \mid a$).
+\begin{enumerate}[label=\arabic*.]
+    \item Show that $8^n - 3^n$ is divisible by $5$ for all $n \in I^+$.
+    \item For $a,b \in I$ and $n \in I^+$, use induction to show $a-b \mid a^n - b^n$.
+    \item Use the previous result to show that if $n$ is odd then $a+b \mid a^n + b^n$.
+\end{enumerate}
+
+\section*{Problem 5}
+Show that we can cover a $2^n \times 3^m$ checkerboard with L-shaped trominoes. (Hint: induct separately on $m$ and $n$.)
+
+\section*{Problem 6}
+Use induction to show that $n^3 \le 3^n$ for all $n \ge 1$. (Hint: prove for $n \ge 3$ first, then check $n=1,2$.)
+
+\section*{Problem 7}
+Use induction to show that
+\[
+\sum_{i=1}^n i \cdot 2^i = (n-1)2^{n+1} + 2.
+\]
+
+\section*{Problem 8}
+Suppose you have an infinite supply of socks of five colors (green, red, black, yellow, white). You draw socks blindly one at a time. How many must you draw to guarantee at least one matching pair?
+
+\section*{Problem 9}
+Let $S$ be a set of $n+1$ integers. Show there exist $a,b \in S$ such that $a-b$ is a multiple of $n$. (Hint: work modulo $n$.)
+
+\section*{Problem 10}
+Prove that among any five points in a $1\text{m} \times 1\text{m}$ square, there is at least one pair whose distance is at most $\sqrt{2}/2$ meters. (Hint: partition the square into four equal squares.)
+
+\end{document}

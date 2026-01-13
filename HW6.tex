@@ -1,0 +1,77 @@
+\newcommand{\hmwkTitle}{Homework 6}
+\newcommand{\hmwkDueDate}{Sunday, March 6, 2016}
+\newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 6}
+\input{hw_template.tex}
+
+\section*{Problem 1: Poker Hands}
+For a standard 52-card deck (4 suits, 13 ranks), count the number of 5-card hands of each type. Provide reasoning for each count.
+\begin{enumerate}[label=\arabic*.]
+    \item Total 5-card hands.
+    \item Royal straight flush.
+    \item Four-of-a-kind.
+    \item Full house.
+    \item Straight flush (non-royal).
+    \item Flush (not straight flush or royal).
+    \item Straight (not straight flush or royal).
+    \item Three-of-a-kind (not full house).
+    \item Two-pair.
+    \item One-pair (not full house).
+    \item High card (none of the above). Provide both an easy and a ``cool'' method.
+\end{enumerate}
+
+\section*{Problem 2}
+How many integers from 1 to 1000 are divisible by 2 or 5 or 7?
+
+\section*{Problem 3}
+Decide whether each function $A \to B$ is injective, surjective, or bijective.
+\begin{enumerate}[label=\arabic*.]
+    \item $A = \{a,b\}$, $B = \{1,2\}$, $f(a)=1$, $f(b)=1$.
+    \item $A = \{a,b\}$, $B = \{1,2,3\}$, $g(a)=1$, $g(b)=2$.
+    \item $A = \{a,b,c\}$, $B = \{1,2\}$, $h(a)=1$, $h(b)=2$, $h(c)=1$.
+    \item $A = \{a,b\}$, $B = \{1,2\}$, $q(a)=1$, $q(b)=2$.
+\end{enumerate}
+
+\section*{Problem 4}
+Find a combinatorial proof of
+\[
+\sum_{i=0}^n \binom{n}{i}\binom{n}{n-i} = \binom{2n}{n}.
+\]
+
+\section*{Problem 5: Jubmoo}
+Four players each receive 13 cards from a shuffled 52-card deck.
+\begin{enumerate}[label=\arabic*.]
+    \item How many total deals are possible?
+    \item How many deals give Tow$+$ no hearts? (Others may also have none.)
+    \item How many deals give Tow$+$ and Boss no hearts?
+    \item How many deals give Tow$+$, Boss, and Majeed no hearts?
+    \item How many deals give all four players no hearts?
+    \item How many deals result in at least one player with no hearts? (Use inclusion-exclusion.)
+    \item What is the probability of needing to redeal (at least one player has no hearts)? Provide a numerical value (approximately 5\%). 
+\end{enumerate}
+
+\section*{Problem 6: Mixed-Up Deck}
+Three identical decks are mixed (156 cards total). Cards of the same rank and suit are indistinguishable. How many distinct arrangements are possible?
+
+\section*{Problem 7: Grid-Walking Robot}
+A robot moves only up or right along grid lines from $(0,0)$ to $(20,10)$.
+\begin{enumerate}[label=\arabic*.]
+    \item How many paths reach $(20,10)$?
+    \item With a checkpoint at $(10,5)$, how many paths go through the checkpoint before reaching $(20,10)$?
+    \item If there's also a pitfall at $(4,3)$ that must be avoided, how many paths go through $(10,5)$ and avoid $(4,3)$?
+\end{enumerate}
+
+\section*{Problem 8: Tower of Hanoi}
+With three poles and 10 distinct disks (larger disks cannot sit on smaller disks):
+\begin{enumerate}[label=\arabic*.]
+    \item How many valid configurations exist when poles are distinct?
+    \item How many when poles are identical? (Answer must be an integer.)
+\end{enumerate}
+
+\section*{Problem 9: Books on Shelves}
+How many ways can $n$ books be placed on $k$ distinguishable shelves?
+\begin{enumerate}[label=\arabic*.]
+    \item Books are indistinguishable copies of one title.
+    \item All books are distinct and order on each shelf matters.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,60 @@
+\newcommand{\hmwkTitle}{Homework 0}
+\newcommand{\hmwkDueDate}{Monday, September 13, 2021}
+\newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 0}
+\input{hw_template.tex}
+
+\section*{Problem 1: Basic Stuff}
+\begin{enumerate}
+    \item[1.1)] Write down the set of integers that is less than $8$ and greater than $2$.
+    \item[1.2)] Write down the members of $\{x \in I \mid x^2 < 10\}$.
+    \item[1.3)] Write down the members of $\{x \in I^+ \mid x^2 < 10\} \cup \{x \in I^+ \mid 2 < x < 8\}$.
+    \item[1.4)] Write down the members of $\{x \in I^+ \mid x^2 < 10\} \cap \{x \in I^+ \mid 2 < x < 8\}$.
+\end{enumerate}
+
+\section*{Problem 2: Notation Exercise}
+Let
+\begin{itemize}
+    \item $M$ be the set of all MUIC students,
+    \item $P(x)$ be the predicate ``student $x$ takes Discrete Math this term'',
+    \item $Q(x)$ be the predicate ``student $x$ takes Data Structure this term'',
+    \item $F(x,y)$ be the predicate ``students $x$ and $y$ are friends on Facebook'',
+    \item $A = \{x \in M \mid P(x)\}$,
+    \item $B = \{x \in M \mid Q(x)\}$.
+\end{itemize}
+Write the following propositions using $\cap$, $\cup$, $\rightarrow$, $\forall$, $\exists$ and set notation.
+\begin{enumerate}
+    \item[2.1)] There are some students at MUIC who take Discrete Math this term. (Example: $\exists x \in M$ such that $P(x)$.)
+    \item[2.2)] There are some students who take both Discrete Math and Data Structure this term.
+    \item[2.3)] There exist students who take Discrete Math but not Data Structure.
+    \item[2.4)] Everyone takes Discrete Math.
+    \item[2.5)] No one takes Data Structure.
+    \item[2.6)] All students who take Discrete Math this term also take Data Structure. (Example: $\forall x \in A,\ Q(x)$ or $\forall x \in M,\ P(x) \rightarrow Q(x)$.)
+    \item[2.7)] There exist students who take Data Structure but not Discrete Math.
+    \item[2.8)] There exists a student in Discrete Math who is friends with everyone in Data Structure.
+    \item[2.9)] Everyone in Data Structure has at least one friend in Discrete Math.
+    \item[2.10)] There exists a student in Discrete Math who is friends with no one in Data Structure.
+\end{enumerate}
+
+\section*{Problem 3: Truth Tables}
+Write down the truth tables for the following statements.
+\begin{enumerate}
+    \item[3.1)] $P \Rightarrow (\neg Q \lor P)$
+    \item[3.2)] $P \Rightarrow (P \land Q)$
+    \item[3.3)] $(P \land R) \lor (Q \land R)$
+\end{enumerate}
+
+\section*{Problem 4: Fun with Quantifiers}
+\begin{enumerate}
+    \item[4.1)] Are the following two propositions equivalent?
+    \begin{align*}
+        &A)~\forall x \in I,\ \exists y \in I \text{ such that } x + y = 23, \\
+        &B)~\exists y \in I \text{ such that } x + y = 23,\ \forall x \in I.
+    \end{align*}
+    \item[4.2)] Let $X$ be the set of all boys in the class and $Y$ the set of all girls. Let $P(a,b)$ be true only if $a$ secretly likes $b$. Translate the following statements into plain English and determine whether they are true. Explain, prove, or disprove each one.
+    \begin{enumerate}
+        \item[(A)] $\forall x \in X,\ \exists y \in Y \text{ such that } P(x,y) \Rightarrow \exists y \in Y \text{ such that } P(x,y)\ \forall x \in X$
+        \item[(B)] $\exists y \in Y \text{ such that } P(x,y)\ \forall x \in X \Rightarrow \forall x \in X,\ \exists y \in Y \text{ such that } P(x,y)$
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

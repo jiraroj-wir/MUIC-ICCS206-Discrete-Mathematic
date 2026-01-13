@@ -1,0 +1,89 @@
+\newcommand{\hmwkTitle}{Homework 7}
+\newcommand{\hmwkDueDate}{Tuesday, June 23, 2015}
+\newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 7}
+\input{hw_template.tex}
+
+\section*{Problem 1: More Counting}
+\begin{enumerate}[label=\arabic*.]
+    \item Let $x_1,\dots,x_k \in \{1,2,3,\dots\}$. How many solutions satisfy $\sum_{i=1}^k x_i = n$?
+    \item Same domain as above. How many solutions satisfy $\sum_{i=1}^k x_i \le n$?
+    \item Let $x_1,\dots,x_k \in \{0,1,2,3,\dots\}$. How many solutions satisfy $\sum_{i=1}^k x_i = n$?
+    \item Same domain as above. How many solutions satisfy $\sum_{i=1}^k x_i \le n$?
+\end{enumerate}
+
+\section*{Problem 2}
+From 100 classes you record whether AJ Piti ends late and whether it rains:
+\[
+\begin{array}{c|cc}
+& \text{Late} & \text{Not Late} \\
+\hline
+\text{Rain} & 10 & 15 \\
+\text{Not Rain} & 50 & 25
+\end{array}
+\]
+Compute:
+\begin{enumerate}[label=\arabic*.]
+    \item $P(\text{Rain})$
+    \item $P(\text{Late})$
+    \item $P(\text{Late} \mid \text{Rain})$
+    \item $P(\text{Late} \cap \text{Rain})$
+    \item $P(\text{Rain} \mid \text{On Time})$
+    \item Are ``Late'' and ``Rain'' independent?
+\end{enumerate}
+
+\section*{Problem 3}
+A bag initially contains 2 cola and 3 grape yoyos.
+\begin{enumerate}[label=\arabic*.]
+    \item Draw two yoyos sequentially without replacement.
+    \begin{enumerate}[label=\alph*.]
+        \item Probability of one cola and one grape.
+        \item Probability of two colas.
+        \item Probability the first yoyo is cola.
+        \item Given the second yoyo is grape, probability the first is cola.
+        \item Given the first is cola, probability the two yoyos are different flavors.
+        \item Given the two yoyos are different flavors, probability the first is cola.
+        \item Given the two yoyos are the same flavor, probability the first is cola.
+    \end{enumerate}
+    \item Draw two yoyos simultaneously (without replacement).
+    \begin{enumerate}[label=\alph*.]
+        \item Probability of one cola and one grape.
+        \item Probability of two colas.
+    \end{enumerate}
+    \item Draw the first yoyo, replace it, then draw a second.
+    \begin{enumerate}[label=\alph*.]
+        \item Probability of one cola and one grape.
+        \item Probability of two colas.
+        \item Probability the first yoyo is cola.
+        \item Given the second is grape, probability the first is cola.
+        \item Given the first is cola, probability the two yoyos are different flavors.
+        \item Given the two are different flavors, probability the first is cola.
+        \item Given the two are the same flavor, probability the first is cola.
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Problem 4}
+Three dice have faces
+\[
+A = \{2,6,7\},\quad B = \{1,5,9\},\quad C = \{3,4,8\}.
+\]
+In class we saw $A$ beats $B$, $B$ beats $C$, and $C$ beats $A$ when rolling once. Now roll the chosen die twice and sum the results; compare dice under this rule. Determine which dice beat which.
+
+\section*{Problem 5}
+Three identical boxes each contain two yoyos. Two boxes have one cola and one grape; the third has two colas. Play the game:
+\begin{enumerate}[label=\arabic*.]
+    \item Pick a box.
+    \item Draw one yoyo.
+    \item If it's grape, return it and reselect a box; repeat.
+    \item If it's cola, keep drawing from that box. If the next yoyo is cola AJ wins; otherwise you win.
+\end{enumerate}
+Is this a fair game? Justify.
+
+\section*{Problem 6}
+AJ Piti will give a rare banana yoyo to Bossy, Tow$+$, or John, each equally likely. AJ secretly selects the recipient. If Bossy asks for one name who will not get the yoyo, AJ responds as follows:
+\begin{itemize}
+    \item If Bossy does not get the yoyo, AJ names the other person who also does not get it.
+    \item If Bossy does get it, AJ flips a fair coin to name John or Tow$+$.
+\end{itemize}
+AJ tells Bossy that John will not get the yoyo. Bossy concludes his chance is $1/2$, while Tow$+$ claims it remains $1/3$ for Bossy and $2/3$ for himself. Determine the actual probabilities for Bossy and Tow$+$ given AJ's statement. (Hint: draw a probability tree.)
+
+\end{document}

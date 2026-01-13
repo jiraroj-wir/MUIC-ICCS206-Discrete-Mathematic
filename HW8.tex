@@ -1,0 +1,91 @@
+\newcommand{\hmwkTitle}{Homework 8}
+\newcommand{\hmwkDueDate}{Thursday, March 3, 2016}
+\newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 8}
+\input{hw_template.tex}
+
+\section*{Problem 1: Coin-Toss Conspiracy}
+Sam, May, and AJ Piti challenge Zaza to a split-the-pool coin-toss game where everyone bets 6 Baht per turn.
+\begin{enumerate}[label=\arabic*.]
+    \item Evil Plan 1: Sam and AJ always bet opposite results while May bets randomly. What is Zaza's expected profit/loss per turn?
+    \item Use linearity of expectation to compute the combined expected return of (Sam + May + AJ Piti).
+    \item Evil Plan 2: Suppose Zaza agrees to bet first each turn. Propose a better strategy for the trio and compute Zaza's expected profit/loss per turn under that strategy.
+\end{enumerate}
+
+\section*{Problem 2: Dice Game}
+You pick a number from 1--6 and roll three fair, independent dice.
+\begin{itemize}
+    \item If your number never appears, you lose 1 Baht.
+    \item If it appears once, you win 1 Baht.
+    \item Twice yields 2 Baht.
+    \item Thrice yields 4 Baht.
+\end{itemize}
+\begin{enumerate}[label=\arabic*.]
+    \item Compute the expected profit/loss and decide if you should play.
+    \item Compute the variance of your profit/loss.
+    \item Now tape the three dice together so they always show the same number. What is the expected profit/loss?
+    \item What is the variance in the taped-dice case?
+\end{enumerate}
+
+\section*{Problem 3: Monopoly Doubles}
+In Monopoly you roll two fair dice. If you roll doubles, you take another turn immediately; three consecutive doubles send you to jail (advance = 0). Let ``advance'' be the total spaces moved during the turn.
+\begin{enumerate}[label=\arabic*.]
+    \item Given no double on the first roll, what is the expected advance?
+    \item Given a double on the first roll but not on the second, what is the expected advance (including both rolls)?
+    \item Given doubles on the first two rolls but not the third, what is the expected advance?
+    \item Using the law of total expectation, find the overall expected advance for a turn.
+\end{enumerate}
+
+\section*{Problem 4: Uniform Generators}
+Let $X$ be uniform on $\{1,\dots,10\}$ and $Y$ be uniform on $\{201,\dots,210\}$, independent of $X$. Quickly compute:
+\begin{enumerate}[label=\arabic*.]
+    \item $E(X)$
+    \item $\mathrm{Var}(X)$
+    \item $E(200 + X)$
+    \item $E(Y)$
+    \item $\mathrm{Var}(200 + X)$
+    \item $E(X^2)$
+    \item $E(Y^2)$
+    \item $E((200 + X)^2)$
+    \item $E((200 + X)Y)$ and explain why it differs from $E(Y^2)$.
+    \item $E(2X + Y + 10)$
+    \item $\mathrm{Var}(2X + Y + 10)$
+\end{enumerate}
+
+\section*{Problem 5: Stocks}
+Two stocks start at 1 Baht today. In one year:
+\[
+Y = \begin{cases}
+0.8 & p=0.25,\\
+1.2 & p=0.75,
+\end{cases}\qquad
+S = \begin{cases}
+0.9 & p=0.5,\\
+1.3 & p=0.5.
+\end{cases}
+\]
+\begin{enumerate}[label=\arabic*.]
+    \item Compute $E(Y)$ and $E(S)$.
+    \item Compute $\mathrm{Var}(Y)$.
+    \item Compute $\mathrm{Var}(S)$.
+    \item Which stock is riskier if variance measures risk?
+    \item If you invest 100 Baht by buying 70 shares of $Y$ and 30 of $S$, what is the expected portfolio value after a year?
+    \item If the returns have correlation $-1$, compute the variance of this portfolio; is it riskier than buying only $S$ or only $Y$?
+    \item If the correlation is $+1$, compute the variance; compare risk to single-stock portfolios.
+    \item With correlation $-1$ and 100 Baht to invest, how many $Y$ and $S$ shares yield zero risk? What is the expected return?
+    \item (Optional) What is the minimum variance achievable when the correlation is $\rho$? (Allow short selling.)
+\end{enumerate}
+
+\section*{Problem 6: Hardware Reliability}
+A computer has one hard drive (MTBF $300{,}000$ hr), one graphics card (MTBF $120{,}000$ hr), and one power supply (MTBF $100{,}000$ hr). A failure occurs if any component fails.
+\begin{enumerate}[label=\arabic*.]
+    \item Probability $p_h$ that the hard drive fails within one hour.
+    \item Probability $p_g$ that the graphics card fails within one hour.
+    \item Probability $p_s$ that the power supply fails within one hour.
+    \item Probability all components still work after 5 hours.
+    \item MTBF of the entire computer.
+\end{enumerate}
+
+\section*{Problem 7: Classroom Flirtation}
+In a $4 \times 4$ grid of desks, each seat is randomly and independently assigned to a boy or a girl with equal probability. A boy flirts with any adjacent girl (up/down/left/right). Each boy can flirt with multiple neighboring girls. Find the expected number of flirtations. (Hint: express as a sum of indicator variables.)
+
+\end{document}

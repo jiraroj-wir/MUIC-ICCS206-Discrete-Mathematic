@@ -1,0 +1,41 @@
+\newcommand{\hmwkTitle}{Homework 3}
+\newcommand{\hmwkDueDate}{Saturday, January 30, 2016}
+\newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 3}
+\input{hw_template.tex}
+
+\section*{Problem 1}
+A chocolate-breaking game:
+\begin{enumerate}[label=\arabic*.]
+    \item Your friend picks the size of a chocolate bar (e.g., $5 \times 2$ or $11 \times 11$).
+    \item After seeing the size, you choose whether you or your friend makes the first break.
+    \item Players alternate breaking one piece at a time until all pieces are $1 \times 1$.
+    \item Whoever breaks the last piece wins.
+\end{enumerate}
+Find and justify the winning strategy. (Bonus: try it with friends.)
+
+\section*{Problem 2}
+Consider an $n$-piece jigsaw puzzle assembled by repeatedly joining two existing blocks (starting from single pieces). Prove that assembling the puzzle takes exactly $n-1$ steps.
+
+\section*{Problem 3}
+Suppose Brew\&Bev gift certificates come in 7-Baht and 4-Baht values, with unlimited supply. Show that any price $p \ge 18$ can be paid with exact change. (Hint: check 22 and 25 Baht.)
+
+\section*{Problem 4}
+Show that every positive integer is a product of a power of two and an odd integer.
+
+\section*{Problem 5}
+Let $T_1 = T_2 = T_3 = 1$ and $T_n = T_{n-1} + T_{n-2} + T_{n-3}$ for $n \ge 4$. Show that $T_n < 2^n$.
+
+\section*{Problem 6}
+Show that every integer $n \ge 1$ can be written as a sum of distinct powers of two.
+
+\section*{Problem 7}
+Consider an infinite grid. Start with one unit square whose perimeter is 4 (even). Each subsequent square must share at least one edge with the existing cluster. Prove that the perimeter length remains even regardless of placement order.
+
+\section*{Problem 8}
+Is the following proposition true? If not, explain the flaw in the proof.
+
+\textbf{Claim.} If we have $n$ straight lines in the plane ($n \ge 2$) and no two are parallel, then all lines intersect at exactly one common point.
+
+\textbf{Bogus proof.} Let $P(n)$ be ``every set of $n$ lines intersects at one point''. Base case $n=2$ is true. Assume $P(n)$ and consider $n+1$ lines $\{a_1,\dots,a_{n+1}\}$. From the inductive hypothesis, $a_1,\dots,a_n$ meet at $D$ and $a_2,\dots,a_{n+1}$ meet at $E$. Since both sets contain $a_2$ and $a_3$, $D=E$, so all $n+1$ lines meet at one point.
+
+\end{document}
