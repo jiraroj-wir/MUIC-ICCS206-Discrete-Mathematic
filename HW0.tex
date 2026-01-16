@@ -1,5 +1,5 @@
 \newcommand{\hmwkTitle}{Homework 0}
-\newcommand{\hmwkDueDate}{Monday, September 13, 2021}
+\newcommand{\hmwkDueDate}{Tuesday, January 20, 2026}
 \newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 0}
 \input{hw_template.tex}
 
@@ -10,6 +10,20 @@
     \item[1.3)] Write down the members of $\{x \in I^+ \mid x^2 < 10\} \cup \{x \in I^+ \mid 2 < x < 8\}$.
     \item[1.4)] Write down the members of $\{x \in I^+ \mid x^2 < 10\} \cap \{x \in I^+ \mid 2 < x < 8\}$.
 \end{enumerate}
+
+\medskip
+\solution
+
+\begin{enumerate}
+    \item[1.1)] $\{x \in \mathbb{I} \mid 2 < x < 8\}$ or $\{3, 4, 5, 6, 7\}$ explicitely.
+    \item[1.2)] $\{-3, -2, -1, 0, 1, 2, 3\}$
+    \item[1.3)] $\{1, 2, 3\} \cup \{3, 4, 5, 6, 7\} = \boxed{\{1, 2, 3, 4, 5, 6, 7\}}$ 
+    \item[1.4)] $\{1, 2, 3\} \cap \{3, 4, 5, 6, 7\} = \boxed{\{3\}}$
+\end{enumerate}
+
+
+\vspace{1em}
+\hrulefill
 
 \section*{Problem 2: Notation Exercise}
 Let
@@ -35,6 +49,24 @@ Write the following propositions using $\cap$, $\cup$, $\rightarrow$, $\forall$,
     \item[2.10)] There exists a student in Discrete Math who is friends with no one in Data Structure.
 \end{enumerate}
 
+\medskip
+\solution
+
+\begin{enumerate}
+    \item[2.2)] $\exits x \in M$ such that $P(x)$ and $Q(x)$; or $\exists(A \cap B)$
+    \item[2.3)] $\exists x \in M \text{ such that } P(x) \land \neg Q(x)$; or $(A \setminus B) \neq \varnothing$; or $\exists x \in A \cap B^{c}$.
+    \item[2.4)] $\forall x \in M,\ P(x)$; or $M = A$
+    \item[2.5)] $B = \emptyset$
+    \item[2.7)] $\exists x \in M \text{ such that } Q(x) \land \neg P(x)$
+    \item[2.8)] $\{\text{facebook friend}\} \subseteq \{\text{friend}\}$ --- since you have to be friend first, to be a facebook friend --- a facebook friend counts as a friend, but a friend might not be facebook friend --- though i have neither an active facebook account nor a friend.
+        \[\boxed{\exists x \in A \text{ such that } \forall y \in B,\ F(x, y)}\]
+    \item[2.9)] $\forall x \in B \text{ such that } \exists y \in B,\ F(x, y)$
+    \item[2.10)] $\exists x \in A \text{ such that } \forall y \in B,\ \neg F(x, y)$
+\end{enumerate}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 3: Truth Tables}
 Write down the truth tables for the following statements.
 \begin{enumerate}
@@ -42,6 +74,51 @@ Write down the truth tables for the following statements.
     \item[3.2)] $P \Rightarrow (P \land Q)$
     \item[3.3)] $(P \land R) \lor (Q \land R)$
 \end{enumerate}
+
+\medskip
+\solution
+
+\begin{enumerate}
+ \item[(3.1)]
+ \[
+  \begin{array}{c|c|c|c|c}
+  P & Q & \neg Q & \neg Q \lor P & P \Rightarrow (\neg Q \lor P)\\\hline
+  T & T & F & T & T\\
+  T & F & T & T & T\\
+  F & T & F & F & T\\
+  F & F & T & T & T
+  \end{array}
+  \]
+
+ \item[(3.2)]
+  \[
+  \begin{array}{c|c|c|c}
+  P & Q & P \land Q & P \Rightarrow (P \land Q)\\\hline
+  T & T & T & T\\
+  T & F & F & F\\
+  F & T & F & T\\
+  F & F & F & T
+  \end{array}
+  \]
+
+ \item[(3.3)]
+  \[
+  \begin{array}{c|c|c|c|c|c}
+  P & Q & R & P \land R & Q \land R & (P \land R) \lor (Q \land R)\\\hline
+  T & T & T & T & T & T\\
+  T & T & F & F & F & F\\
+  T & F & T & T & F & T\\
+  T & F & F & F & F & F\\
+  F & T & T & F & T & T\\
+  F & T & F & F & F & F\\
+  F & F & T & F & F & F\\
+  F & F & F & F & F & F
+  \end{array}
+  \]
+\end{enumerate}
+
+\vspace{1em}
+\hrulefill
 
 \section*{Problem 4: Fun with Quantifiers}
 \begin{enumerate}
