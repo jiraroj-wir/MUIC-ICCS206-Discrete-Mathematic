@@ -42,6 +42,31 @@ If $n = ab$, then $\sqrt{a} \le \sqrt{n}$ or $\sqrt{b} \le \sqrt{n}$.
 \medskip
 \solution
 
+\begin{proof}
+  this one, we do contrapositive proof, let the $P$ be proposition $n
+  = ab$, Q be proposition $\sqrt{a} \le \sqrt{n}$, R be proposition $
+  \sqrt{b} \le \sqrt{n}$. The conjunction we're trying to proof can be
+  written as
+  \[
+  P \to (Q \lor R)
+  \]
+    using contrapositive --- the logical property of $\to$
+  \[
+  P \to (Q \lor R) \equiv (\neg Q \land \neg R) \to \neg P
+  \]
+  which translate to
+  \[
+  \text{if }\sqrt{a} > \sqrt{n}\text{ and }\sqrt{b} > \sqrt{n},
+  \text{ then }n \ne ab.
+  \]
+  since $\sqrt{a} > \sqrt{n}$ and $\sqrt{b} > \sqrt{n}$
+  \[
+  ab = (\sqrt{a}\sqrt{b})^2 > (\sqrt{n}\sqrt{n})^2 = n^2 \ne n
+  \]
+  therefore, $(\neg Q \land \neg R) \to \neg P$ is true, and thus $P \to (Q
+  \lor R)$ is true
+  \end{proof}
+
 \vspace{1em}
 \hrulefill
 
