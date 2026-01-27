@@ -110,8 +110,26 @@ Show that if $x$ is a rational number and $y$ is a rational number, then $x + y$
 
 \section*{Problem 4}
 Show that if $x$ is irrational then $1/x$ is also irrational.
+
 \medskip
 \solution
+
+ \begin{proof}
+  we will assume that x is rational number for the sake of
+  contradiction, from the definition x can be written as
+  \[
+      x = \frac{a}{b} \text{ when } a,b \in \mathbb{I}
+  \]
+  then
+  \begin{align*}
+      \frac{1}{x} &= \frac{1}{\frac{a}{b}}\\
+  &= \frac{b}{a} && \text{where $a$ and $b$ are still an integer}
+  \end{align*}
+  since $\frac{1}{x} = \frac{b}{a}$ --- a fraction of two integers;
+  it implies that $1/x$ is a rational number, which contradicts the
+  given that x is irrational, thus if x is irrational then $1/x$ is
+  also irrational.
+  \end{proof}
 
 \vspace{1em}
 \hrulefill
