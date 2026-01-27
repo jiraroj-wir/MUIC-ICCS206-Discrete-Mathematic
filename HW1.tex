@@ -342,6 +342,23 @@ Let $O$ be the set of odd integers. Prove that $\forall x \in O\ \exists p,q \in
 \medskip
 \solution
 
+\begin{proof}
+  firstly, we factor the length of the square as
+  \[
+  x = p^2 - q^2 = (p+q)(p-q)
+  \]
+  now, we want x to be odd number, so we should be able to write x in a
+  form of $x = 2k + 1$. checking all odd-even configurations for $p+q$
+  and $p-q$ shows that the product is even whenever the factors are
+  both even or both odd. however, noting that consecutive integers $k$
+  and $k+1$ give
+  \[
+  (k + 1 - k)(k + 1 + k) = 1 \cdot (2k + 1) = 2k + 1
+  \]
+  we can choose $p = k+1$ and $q = k$, both in $I$, so every odd number
+  $x$ can be constructed as the difference of two squares of integers.
+\end{proof}
+
 \vspace{1em}
 \hrulefill
 
