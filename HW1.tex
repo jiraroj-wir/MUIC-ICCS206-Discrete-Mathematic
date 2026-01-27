@@ -1,24 +1,80 @@
 \newcommand{\hmwkTitle}{Homework 1}
-\newcommand{\hmwkDueDate}{Monday, September 13, 2021}
+\newcommand{\hmwkDueDate}{Tuesday, January 27, 2026}
 \newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 1}
 \input{hw_template.tex}
 
 \section*{Problem 1}
-A number $x$ is a perfect square if and only if $\exists m \in I$ such that $x = m^2$.
+A number $x$ is a perfect square if and only if 
+\[\exists m \in I \text{ such that } x = m^2\]
 Prove that if $x$ and $y$ are both perfect squares, then $xy$ is also a perfect square.
+
+
+\medskip
+\solution
+
+ \begin{proof}
+  from the definition of a perfect square, given $x$ and $y$ are
+  perfect square, we say
+  \[
+  x = n^2
+  \]
+  and
+  \[
+  y = m^2
+  \]
+  now, we can write $xy$ as
+  \begin{align*}
+  x \cdot y &= n^2 \cdot m^2\\
+  % idk what's wrong with the spacing, but it doesn't look that bad
+  &= (nm)^2 && \text{by the commutative and associative property
+  of }\mathbb{R}
+  \end{align*}
+  thus $xy$ is also a perfect square
+  \end{proof}
+
+\vspace{1em}
+\hrulefill
+
 
 \section*{Problem 2}
 If $n = ab$, then $\sqrt{a} \le \sqrt{n}$ or $\sqrt{b} \le \sqrt{n}$.
 
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
+
+
 \section*{Problem 3}
 Show that if $x$ is a rational number and $y$ is a rational number, then $x + y$ is a rational number.
 
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
+
+
 \section*{Problem 4}
 Show that if $x$ is irrational then $1/x$ is also irrational.
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
+
 
 \section*{Problem 5}
 Recall the card trick shown in class (\url{https://youtu.be/UmlZaONp-_I?t=3671}).
 Suppose that we have a deck of $52$ cards (26 reds and 26 blacks). We draw two cards at a time until the deck is empty while counting the number of black pairs, red pairs, and different-color pairs. Show that the number of red pairs and the number of black pairs are always equal at the end.
+
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
+
 
 \section*{Problem 6}
 Recall the absolute value function
@@ -33,12 +89,26 @@ Prove the statement
 \left|\frac{a}{b}\right| = \frac{|a|}{|b|}\qquad \forall a,b \in R,\ b \ne 0.
 \]
 
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
+
+
 \section*{Problem 7}
 \begin{enumerate}[label=\arabic*.]
     \item State the contrapositive and prove: If $r$ is irrational, then $r^{1/5}$ is irrational.
     \item Is the following statement true? Prove or disprove: If $r$ is rational, then $r^{1/5}$ is rational.
     \item Is the following statement true? Prove or disprove: If $r^{1/5}$ is irrational, then $r$ is irrational.
 \end{enumerate}
+
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
+
 
 \section*{Problem 8}
 Consider the following game with $10{,}000$ players.
@@ -51,10 +121,31 @@ Consider the following game with $10{,}000$ players.
 \end{enumerate}
 Your technical-analysis friend offers a program that reads the graph and tells everyone exactly what to bet, claiming everyone will make a profit after 20{,}000 rounds if everyone uses the program. Prove this claim cannot be true. (Hint: zero-sum.)
 
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
+
+
 \section*{Problem 9}
 Consider a room of area $5\,\text{m}^2$ in which you can pick any shape, and you wish to place nine rugs each of area $1\,\text{m}^2$, also with shapes of your choice. Intouch demands that no pair of rugs may intersect with area at least $1/9\,\text{m}^2$. Prove that satisfying both Billy's and Intouch's requirements is impossible. (Hint: contradiction.)
 
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
+
+
 \section*{Problem 10}
 Let $O$ be the set of odd integers. Prove that $\forall x \in O\ \exists p,q \in I$ such that $x = p^2 - q^2$; i.e., every odd integer can be written as the difference of two squares.
+
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
+
 
 \end{document}
