@@ -163,7 +163,6 @@ Suppose that we have a deck of $52$ cards (26 reds and 26 blacks). We draw two c
   equal at the end.
   \end{proof}
 
-
 \vspace{1em}
 \hrulefill
 
@@ -183,6 +182,52 @@ Prove the statement
 
 \medskip
 \solution
+
+ \begin{proof}
+  let us consider a, we'll have two cases:
+  \begin{enumerate}
+      \item $a \ge 0$
+      \item $a < 0$
+  \end{enumerate}
+  consider case 1 first, there'll be two more sub-case if we consider
+  b:
+  \begin{enumerate}
+      \item[$1.1$] $b \ge 0$ --- since both a and b are at least 0
+      \[
+          \frac{a}{b} \ge 0 \implies \left|\frac{a}{b}\right| = \frac{a}{b},\
+  \text{and } |a| = a\ \text{and } |b| = b \implies \frac{|a|}{|b|} =
+  \frac{a}{b}
+      \]
+      the theorem is satisfied
+      \item[$1.2$] $b < 0$
+      \[
+      \frac{a}{b} \le 0 \implies \left|\frac{a}{b}\right| = -\frac{a}{b},\
+  \text{and } |a| = a,\ |b| = -b \implies \frac{|a|}{|b|} = -\frac{a}
+  {b}
+      \]
+      the theorem holds
+  \end{enumerate}
+  consider case 2, $a < 0$, again two sub-cases for b:
+  \begin{enumerate}
+      \item[$2.1$] $b \ge 0$
+      \[
+          \frac{a}{b} \le 0 \implies \left|\frac{a}{b}\right| = -\frac{a}{b},\
+  \text{and } |a| = -a,\ |b| = b \implies \frac{|a|}{|b|} = -\frac{a}
+  {b}
+      \]
+      the theorem is satisfied
+      \item[$2.2$] $b < 0$
+      \[
+          \frac{a}{b} \ge 0 \implies \left|\frac{a}{b}\right| = \frac{a}{b},\
+  \text{and } |a| = -a,\ |b| = -b \implies \frac{|a|}{|b|} = \frac{a}
+  {b}
+      \]
+      the theorem holds
+  \end{enumerate}
+  since we have covered every case, we are done with the proof
+  \end{proof}
+
+
 
 \vspace{1em}
 \hrulefill
