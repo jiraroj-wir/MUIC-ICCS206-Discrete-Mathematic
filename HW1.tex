@@ -142,6 +142,28 @@ Suppose that we have a deck of $52$ cards (26 reds and 26 blacks). We draw two c
 \medskip
 \solution
 
+ \begin{proof}
+  there are 3 scenario that could happened here
+  \begin{itemize}
+      \item a pair of red: notated with $R$
+      \item a pair of black: notated with $B$
+      \item mixed: notated with $M$
+  \end{itemize}
+  for set of red cards (26 in total), the set is a combination of
+  \[
+  2R + M = 26
+  \]
+  and for the set of black cards
+  \[
+  2B + M' = 26
+  \]
+  since a mixed pair must include both red and black card, $M = M'$,
+  and we can solving the two equation gives $R = B$ which concludes
+  that the number of red pairs and the number of black pairs are always
+  equal at the end.
+  \end{proof}
+
+
 \vspace{1em}
 \hrulefill
 
