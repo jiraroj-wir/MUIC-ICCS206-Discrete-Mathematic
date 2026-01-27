@@ -77,6 +77,33 @@ Show that if $x$ is a rational number and $y$ is a rational number, then $x + y$
 \medskip
 \solution
 
+ \begin{proof}
+  we define rational number as any number in the field (commonly $
+  \mathbb{R}$ or $\mathbb{C}$) that can be written in a form of
+  fraction of two integer with non-zero denominator --- so x and y can
+  be written as
+  \[
+  x = \frac{x_n}{x_d}
+  \]
+  \[
+  y = \frac{y_n}{y_d}
+  \]
+  now, if we sum up the two
+  \begin{align*}
+  x + y &= \frac{x_n}{x_d} + \frac{y_n}{y_d}\\
+  &= \frac{x_n \cdot y_d + y_n \cdot x_d}{x_d \cdot y_d}
+  \end{align*}
+  with the closure of multiplication and addition property in $
+  \mathbb{Z}$, each of $x_n \cdot y_d$, $y_n \cdot x_d$, and $x_d \cdot
+  y_d$ stays an integer, and the numerator sum remains in $\mathbb{I}$.
+  also, $x_d \ne 0$ and $y_d \ne 0$ imply $x_d \cdot y_d \ne 0$, so the
+  fraction is valid.
+
+  so, we can conclude that $\frac{x_n \cdot y_d + y_n \cdot x_d}{x_d
+  \cdot y_d}$ is a fraction of integer, and thus x + y is a rational
+  number
+  \end{proof}
+
 \vspace{1em}
 \hrulefill
 
