@@ -12,8 +12,30 @@ Use induction to prove
 \solution
 
  \begin{proof}
-  
- \end{proof}
+
+    we claim that
+    \[
+    P(n) = 1^2 + 2^2 + 3^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}
+    \]
+    for the \textbf{base case} where $n_0 = 1$
+    \[
+    \begin{aligned}
+    P(1) &= 1^2 = \frac{1(1+1)(2\cdot 1 + 1)}{6} = 1 \\
+    P(2) &= 1^2 + 2^2 = 5 = \frac{2(2+1)(2\cdot 2 + 1)}{6} \\
+    P(3) &= 1^2 + 2^2 + 3^2 = 14 = \frac{3(3+1)(2\cdot 3 + 1)}{6} 
+    \end{aligned}
+    \]
+    then, we assume P(k) for arbitrary $(k \ge n_0)$, we prove $p(k+1)
+  = \frac{(k+1)((k+1) + 1)(2(k+1) + 1)}{6}$
+    \begin{align*}
+    p(k+1) &= \underbrace{(1^2 + 2^2 + 3^2 + \cdots + k^2)}_{P(k)} +
+  (k+1)^2\\
+    &= \frac{k(k+1)(2k+1)}{6} + (k+1)^2 && \text{inductive hypothesis}\\
+    &= \frac{k(k+1)(2k+1) + 6(k+1)^2}{6}\\
+    &= \frac{(k+1)(k+2)(2k+3)}{6} && \text{factored the numerator}\\
+    &= \frac{(k+1)((k+1) + 1)(2(k+1) + 1)}{6} && \text{rewrite in the expected form for } P(k+1)
+    \end{align*}
+    since P(k+1) follows P(k), the \textbf{induction case} is satisfied, thus we can conclude the given relation is true \end{proof}
 
 \vspace{1em}
 \hrulefill
