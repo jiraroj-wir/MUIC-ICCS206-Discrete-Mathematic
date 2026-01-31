@@ -266,9 +266,79 @@ Make sure whatever you prove is actually for 2n × 3m, $\forall n, m \ge 1$ boar
 \medskip
 \solution
 
+
  \begin{proof}
-  
- \end{proof}
+  we do quick check arithmatically first: L-shaped triminoes got an
+  area of 3 unit$^2$, and our checkerboard with an area of $2^n \times
+  3^m$
+
+  \[
+  3 \mid 2^n \times 3^m \quad \text{since the board area is a factor of 3}
+  \]
+
+  so we can continue on the proof, working on one dimension first, we
+  claim that
+  \[
+  P(n) : \text{we can cover a } 2 \times 3^m \text{ checkerboard with
+  L-shaped trominoes}
+  \]
+
+  for our \textbf{base case} where $m_0 = 1$
+
+    % temporary color pair, maybe add it to my main template later
+    \definecolor{charcoal}{RGB}{54,69,79}
+    \definecolor{cyanaccent}{RGB}{0,170,200}
+
+    \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+    \fill[charcoal!70,opacity=0.6] (0,0) rectangle (1,1);
+    \fill[charcoal!70,opacity=0.6] (0,1) rectangle (1,2);
+    \fill[charcoal!70,opacity=0.6] (1,0) rectangle (2,1);
+    \fill[cyanaccent,opacity=0.6] (1,1) rectangle (2,2);
+    \fill[cyanaccent,opacity=0.6] (2,1) rectangle (3,2);
+    \fill[cyanaccent,opacity=0.6] (2,0) rectangle (3,1);
+    \draw (0,0) rectangle (3,2);
+    \draw (1,0) -- (1,2);
+    \draw (2,0) -- (2,2);
+    \draw (0,1) -- (3,1);
+    \end{tikzpicture}
+  \end{center}    
+    then, we assume P(k) for arbitrary $(k \ge m_0)$, we prove P(k+1)
+    holds true
+
+  \[
+  P(k+1) = 2 \times 3^{k+1} = 2 \times 3(3^k)
+  \]
+
+  we imagine this as splitting P(k+1) into 3 equivalent section of
+  P(k), and since P(k) is self-contained, placing three of them side-
+  by-side will result in P(k+1). Therefore the \textbf{induction case}
+  is satisfied, and we can conclude that P(k) is true.
+
+     \vspace{1em}
+  now, we can work it on two dimension, we claim that
+  \[
+  P^{\prime}(n) = \text{we can cover a } 2^n \times 3^m \text{ checker
+  board with L-shaped trominoes}
+  \]
+
+  for $P^{\prime}(n)$ \textbf{base case}, we start with P(k) that
+  we just prove true, where $n_0 = 1$, $\forall m \in I^+:$ which is
+  true ... we just prove this. then, we assume $P^{\prime}(k)$ for arbitrary $(k \ge n_0)$, we
+  prove $P^{\prime}(k+1)$ holds true
+
+  \[
+  P^{\prime}(k+1) = 2^{k+1} \times 3^m = 2(2^k) \times 3^m \quad
+  \text{where } m \in I^{\prime\prime}
+  \]
+
+  using the same reasoning as the first claim, we can split
+  $P^{\prime}(k+1)$ into two equivalent section of self-contained
+  $P^{\prime}(k)$ --- the \textbf{induction case} is complete;
+  therefore B(k) is true for all $n \in I^+$, and since it's base case
+  holds true for all $m \in I^+$, every $2^n 3^m$ board is tilable
+  with L-shaped trominoes.
+  \end{proof}
 
 \vspace{1em}
 \hrulefill
