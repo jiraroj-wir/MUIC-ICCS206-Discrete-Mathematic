@@ -145,7 +145,7 @@ Recall that $a$ is divisible by $b$ if $\exists n \in I$ such that $a = nb$ (den
   \begin{proof}
       we claim that
       \[
-          P(n) = 5 \mid (8^n - 3^n).
+          P(n) = 5 \mid (8^n - 3^n) \quad \forall n \in I^+.
       \]
       for the \textbf{base case} where $n_0 = 1$
       \[
@@ -164,14 +164,99 @@ Recall that $a$ is divisible by $b$ if $\exists n \in I$ such that $a = nb$ (den
       &= 5 \mid \bigl(8 \cdot 8^k - 8 \cdot 3^k\bigr) + \bigl(8 \cdot 3^k - 3 \cdot 3^k\bigr) && \text{add and subtract }8 \cdot 3^k\\
       &= 5 \mid 8(8^k - 3^k) + (8 \cdot 3^k - 3 \cdot 3^k) &&
   \text{factor both terms}\\
-          &= 5 \mid 8(5m) + (8-3)3^k && \text{substitute } 8^k - 3^k = 5m \text{; distributive property}\\
-          &= 5 \mid 5(8m) + 5(3^k) && \text{commutativity property}\\
-          &= 5 \mid 5(8m + 3^k) && \text{since dividend is a factor of 5, satement holds true}
+      &= 5 \mid 8(5m) + (8-3)3^k && \text{substitute } 8^k - 3^k = 5m \text{; distributive property}\\
+      &= 5 \mid 5(8m) + 5(3^k) && \text{commutativity property}\\
+      &= 5 \mid 5(8m + 3^k) && \text{since dividend is a factor of 5, satement holds true}
       \end{align*}
       since P(k+1) follows P(k), the \textbf{induction case} is
   satisfied, thus we can conclude the given relation is true
    \end{proof}
-\end{enumerate}
+
+        \item 
+        \begin{proof}
+        we claim that
+        \[
+            P(n) = (a-b) \mid (a^n - b^n) \quad \forall a,b \in I,\, n
+  \in I^+.
+        \]
+        for the \textbf{base case} where $n_0 = 1$
+        \[
+        \begin{aligned}
+        P(1) &= (a-b) \mid (a - b)\\
+        P(2) &= (a-b) \mid (a^2 - b^2) = (a-b)(a+b) \\
+        P(3) &= (a-b) \mid (a^3 - b^3) = (a-b)(a^2 + ab + b^2)
+        \end{aligned}
+        \]
+        then, we assume P(k) for arbitrary $(k \ge n_0)$ with $\exists
+  m \in \mathbb{Z}$ such that $a^k - b^k = (a-b)m$, we prove $p(k+1) =
+  (a-b) \mid (a^{k+1} - b^{k+1})$
+        \begin{align*}
+        P(k+1) &= (a-b) \mid (a^{k+1} - b^{k+1})\\
+        &= (a-b) \mid a \cdot a^k - b \cdot b^k\\
+        &= (a-b) \mid \bigl(a \cdot a^k - a \cdot b^k\bigr) + \bigl(a
+  \cdot b^k - b \cdot b^k\bigr) && \text{add and subtract }a \cdot
+  b^k\\
+        &= (a-b) \mid a(a^k - b^k) + b^k(a - b) && \text{factor both
+  terms}\\
+        &= (a-b) \mid a(a-b)m + b^k(a - b) && \text{substitute }a^k -
+  b^k = (a-b)m\\
+        &= (a-b) \mid (a-b)(am + b^k) && \text{factor out the common }
+  (a-b)
+        \end{align*}
+        since P(k+1) follows P(k), the \textbf{induction case} is
+  satisfied, thus $(a-b) \mid (a^n - b^n)$ for all $n \in I^+$
+        \end{proof}
+
+        \item 
+        \begin{proof}
+
+    we claim that
+    \[
+    P(n) = (a+b) \mid (a^n + b^n), \quad \forall n \in \mathbb{O}.
+    \]
+
+    for the \textbf{base case} where $n_0 = 1$
+    \[
+    \begin{aligned}
+    P(1) &= (a+b) \mid (a + b) \\
+    P(3) &= (a+b) \mid (a^3 + b^3) = (a+b)(a^2 - ab + b^2)\\
+    P(5) &= (a+b) \mid (a^5 + b^5) = (a+b)(a^4 - a^3b + a^2b^2 - ab^3 + b^4) 
+    \end{aligned}
+    \]
+
+    then, since $n$ is odd we write $n = 2k+1$ with $k \ge 0$, then we
+  assume P(k) for arbitrary $k$ with $\exists m \in \mathbb{Z}$ such
+  that $a^{2k+1} + b^{2k+1} = m(a+b)$, we prove $P(k+1) = (a+b) \mid
+  (a^{2(k+1)+1} + b^{2(k+1)+1})$
+    \begin{align*}
+    P(k+1)
+    &= (a+b) \mid (a^{2(k+1)+1} + b^{2(k+1)+1}) \\
+    &= (a+b) \mid (a^{2k+3} + b^{2k+3}) \\
+    &= (a+b) \mid \bigl(a^2 a^{2k+1} + b^2 b^{2k+1}\bigr)
+    && \text{rewrite the exponents} \\
+    &= (a+b) \mid \bigl(
+    a^2(a^{2k+1} + b^{2k+1})
+    + b^{2k+1}(b^2 - a^2)
+    \bigr)
+    && \text{add and subtract } b^{2k+1} \\
+    &= (a+b) \mid \bigl(
+    a^2(a^{2k+1} + b^{2k+1})
+    + b^{2k+1}(b-a)(b+a)
+    \bigr)
+    && \text{factor } b^2 - a^2 \\
+    &= (a+b) \mid \bigl(
+        a^2(m(a+b))
+    + b^{2k+1}(b-a)(b+a)\bigr)
+        && \text{substitute } a^{2k+1} + b^{2k+1} = m(a+b)
+     \\
+    &= (a+b) \mid 
+        (a+b)(a^2m + b^{2k+1}(b-a))
+        && \text{factor out the common } (a+b)
+    \end{align*}
+    since P(k+1) follows P(k), the \textbf{induction case} is
+  satisfied, thus $(a-b) \mid (a^n - b^n)$ for all $n \in I^+$
+   \end{proof}
+    \end{enumerate}
 
 \vspace{1em}
 \hrulefill
