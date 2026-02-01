@@ -399,7 +399,31 @@ Use induction to show that
 \solution
 
  \begin{proof}
-  
+
+      we claim that
+      \[
+      P(n) = 1\cdot 2^{1} + 2\cdot 2^{2} + 3\cdot 2^{3} + \cdots +
+  n\cdot 2^{n} = (n-1)2^{n+1} + 2
+      \]
+      for the \textbf{base case} where $n_0 = 1$
+      \[
+      \begin{aligned}
+      P(1) &= 1\cdot 2^{1} = 2 = (1-1)2^{1+1} + 2 \\
+      P(2) &= 1\cdot 2^{1} + 2\cdot 2^{2} = 10 = (2-1)2^{2+1} + 2 \\
+      P(3) &= 1\cdot 2^{1} + 2\cdot 2^{2} + 3\cdot 2^{3} = 34 = (3-1)2^{3+1} + 2
+      \end{aligned}
+      \]
+      then, we assume P(k) for arbitrary $(k \ge n_0)$, we prove
+  $P(k+1) = k2^{k+2} + 2)$
+  \begin{align*}
+  P(k+1) &= \underbrace{(1\cdot 2^{1} + 2\cdot 2^{2} + 3\cdot 2^{3} +
+  \cdots + k\cdot 2^{k})}_{P(k)} + (k+1)2^{k+1}\\
+  &= (k-1)2^{k+1} + 2 + (k+1)2^{k+1} && \text{inductive hypothesis}\\
+      &= \bigl((k-1)+(k+1)\bigr)2^{k+1} + 2 = (2k)2^{k+1} + 2 && \text{combine terms with } 2^{k+1}\\
+  &= k2^{k+2} + 2 = \bigl((k+1)-1\bigr)2^{(k+1)+1} + 2 && \text{rewrite in the expected form for } P(k+1)
+  \end{align*}
+  since P(k+1) follows P(k), the \textbf{induction case} is satisfied,
+  thus we can conclude the given relation is true
  \end{proof}
 
 \vspace{1em}
