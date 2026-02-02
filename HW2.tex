@@ -436,6 +436,38 @@ Suppose you have an infinite supply of socks of five colors (green, red, black, 
 \solution
 
  \begin{proof}
+
+  let
+
+     \[P(n): \text{drawing n socks of five colors will guarantees a pair of
+     same color}\]
+
+  since there's five possible colors of socks that can be drawn
+  infinitely, we imagine that there's the same amount of boxes as the
+  color variations, five boxes --- which we put coorecponding color
+  sock in. By the pigeonhole principle
+
+     \[\text{n items put into m containers, when n > m, then at least one
+     container must contain more than one item}\]
+
+     therefores, by the pigonhold principle, we only have to draw
+     more than 5 times, so 6 (or more) times, to guarantees a pair --- P(6) is true.
+
+     \vspace{1em}
+  now, we might want to make sure that lower case doesn't satisfy our
+  proposition, the largest and most likely to succeed is P(5); lower draws won't have any shot if P(5) failed. 
+
+     \vspace{1em}
+  a counterexample of let $C = \langle c_1, c_2, c_3, c_4, c_5 \rangle$
+  denote the five distinct sock colors. pick the ordered draw
+  $D = \langle c_1, c_2, c_3, c_4, c_5 \rangle$ and form
+  $D_\sigma = \langle c_{\sigma(1)}, c_{\sigma(2)}, c_{\sigma(3)},
+  c_{\sigma(4)}, c_{\sigma(5)} \rangle$ for any nontrivial permutation
+  $\sigma \in S_5$. each sequence represents five draws with no
+  repetition, so neither $D$ nor $D_\sigma$ contains a matching pair,
+  thus 5 draws cannot satisfy our proposition, and we can conclude
+  that you must draw at least 6 socks to guarantee at least one
+  matching pair.
   
  \end{proof}
 
