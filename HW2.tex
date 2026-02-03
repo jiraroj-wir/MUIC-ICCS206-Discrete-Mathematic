@@ -481,7 +481,32 @@ Let $S$ be a set of $n+1$ integers. Show there exist $a,b \in S$ such that $a-b$
 \solution
 
  \begin{proof}
-  
+
+  on a set of $n + 1$ integers --- set $S$, if we find all
+  possible $m \in I$ where $\forall a_i, a_j \in \mathbb{S}, (a_i
+  - a_j) \equiv m \pmod{n}$; $m$ will have $n$ possible answer $0,
+  1, \dots, n-1$. from the pigeonhole principle, since there's $n$
+  possible outcomes, but $n + 1$ integers, at least one outcome will
+  repeat.
+
+  \vspace{1em}
+
+  in case of repeated outcome
+  \[
+  (a_i - a_j) \equiv (a'_i - a'_j) \pmod{n} \text{ where } |{i,j} \cap {i',j'}| = 1 
+  % only 1 term could be shared
+  \]
+
+  we can rearrange terms as
+
+  \[
+  (a_i-a_j) - (a'_i - a'_j) \equiv 0 \pmod{n}
+  \]
+
+  this means that, repeated difference will got a form that's a
+  multiple of $n$, and since repeated difference is inevatable, the
+  statement is true.
+
  \end{proof}
 
 \vspace{1em}
