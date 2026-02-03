@@ -487,11 +487,7 @@ Let $S$ be a set of $n+1$ integers. Show there exist $a,b \in S$ such that $a-b$
   - a_j) \equiv m \pmod{n}$; $m$ will have $n$ possible answer $0,
   1, \dots, n-1$. from the pigeonhole principle, since there's $n$
   possible outcomes, but $n + 1$ integers, at least one outcome will
-  repeat.
-
-  \vspace{1em}
-
-  in case of repeated outcome
+  repeat. in case of repeated outcome
   \[
   (a_i - a_j) \equiv (a'_i - a'_j) \pmod{n} \text{ where } |{i,j} \cap {i',j'}| = 1 
   % only 1 term could be shared
@@ -509,7 +505,6 @@ Let $S$ be a set of $n+1$ integers. Show there exist $a,b \in S$ such that $a-b$
 
  \end{proof}
 
-\vspace{1em}
 \hrulefill
 
 \section*{Problem 10}
@@ -520,6 +515,40 @@ Prove that among any five points in a $1\text{m} \times 1\text{m}$ square, there
 
  \begin{proof}
   
+  if we partition the square into four equal squares, and tries to
+  fill in $5$ points along those square's outer diameter. one of the
+  small square's diameter will contain two points --- according to the
+  pigeonhole principle --- as drawn below ...
+  \[
+  \begin{tikzpicture}[scale=3]
+  \draw (0,0) rectangle (1,1);
+  \draw (0.5,0)--(0.5,1);
+  \draw (0,0.5)--(1,0.5);
+  \fill (0.25,1) circle (0.02);
+  \fill (1,0.75) circle (0.02);
+  \fill (0,0.25) circle (0.02);
+  \fill (0.5,0) circle (0.02);
+  \fill (1,0.5) circle (0.02);
+  \draw[thick] (0.5,0)--(1,0.5);
+  \node at (0.78,0.22) {$\frac{\sqrt{2}}{2}$};
+  \end{tikzpicture}
+  \]
+  since one of the small square's outer diameter must contain two
+  points, we try to put that two point as far away as possible from
+  each other (at the edge of that small square), just like the plot
+  above.
+  
+  \vspace{1em}
+
+  now, we just need to find it's length. since the initial square
+  side is $1 \text{ m}$, the small square side should be $\frac{1
+  \text{ m}}{2}$. using pythagorean theorem, the diagonal line across
+  it's small square should be
+  \[
+  \sqrt{\left(\frac{1}{2}\right)^2 + \left(\frac{1}{2}\right)^2} =
+     \boxed{\frac{\sqrt{2}}{2} \text{ m}}
+  \]
+
  \end{proof}
 
 \vspace{1em}
