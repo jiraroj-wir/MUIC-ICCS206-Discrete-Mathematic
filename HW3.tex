@@ -132,8 +132,130 @@ we got $P(k + 1) = k$, which could be formatted to $\boxed{P(n) = n - 1}$.
 \section*{Problem 3}
 Suppose Brew\&Bev gift certificates come in 7-Baht and 4-Baht values, with unlimited supply. Show that any price $p \ge 18$ can be paid with exact change. (Hint: check 22 and 25 Baht.)
 
+\medskip
+\solution
+
+\begin{proof}
+
+we split this proof into four congruence cases, prove each of them by
+observation, we claim that
+
+\[
+\text{any integer } p \text{ that's at least } 18 \text{ can be constructed
+with the sum of } 7 \text{ and } 4
+\]
+
+classify the integers by their residue modulo 4, given the base integer
+of each category (residue of 0, 1, 2 and 3), sum it up with arbitrary $4n$
+where $n$ is also an integer --- we could construct any integer following
+that base integers.
+
+\vspace{1em}
+
+so, now we just need to find those 4 base integers, intersect their range
+--- which is $b - 4$ where $b$ is that base integer.
+
+\begin{enumerate}
+\item case 1: $b_0 \equiv 0 \pmod 4$
+
+\vspace{1em}
+
+we got the smallest $b_0$ as $0$, which we can now construct any integer of
+this same residue
+
+\[
+0 = 0 \cdot 7 + 0 \cdot 4
+\]
+
+\[
+0 \equiv 0 + 4n \pmod 4
+\]
+
+and thus, the range of this base residue case is
+\[
+(-4, \infty) \text{ (around } (0, \infty)).
+\]
+
+\item case 2: $b_1 \equiv 1 \pmod 4$
+
+\vspace{1em}
+
+the smallest $b_1$ following the construction rule is
+\[
+21 = 7 + 7 + 7,
+\]
+hence every integer of this residue is
+
+\[
+21 \equiv 21 + 4n \pmod 4, \qquad 21 + 4n = 7 + 7 + 7 + 4n
+\]
+
+and the range is
+\[
+(21 - 4, \infty) = (17, \infty).
+\]
+
+\item case 3: $b_2 \equiv 2 \pmod 4$
+
+\vspace{1em}
+
+the smallest $b_2$ is
+\[
+14 = 7 + 7,
+\]
+so any integer of this residue satisfies
+
+\[
+14 \equiv 14 + 4n \pmod 4, \qquad 14 + 4n = 7 + 7 + 4n
+\]
+
+and the range is
+\[
+(14 - 4, \infty) = (10, \infty).
+\]
+
+\item case 4: $b_3 \equiv 3 \pmod 4$
+
+\vspace{1em}
+
+the smallest $b_3$ is
+\[
+7 = 7,
+\]
+giving
+
+\[
+7 \equiv 7 + 4n \pmod 4, \qquad 7 + 4n = 7 + 4n
+\]
+
+and the range is
+\[
+(7 - 4, \infty) = (3, \infty).
+\]
+\end{enumerate}
+
+we then intersect the range from those cases
+
+\[
+(0, \infty) \cap (17, \infty) \cap (10, \infty) \cap (3, \infty) = (17,
+\infty) \approx [18, \infty)
+\]
+
+thus $p$ is true for all integers over $18$.\vspace{1em}
+
+\end{proof}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 4}
 Show that every positive integer is a product of a power of two and an odd integer.
+
+\medskip
+\solution
+
+\vspace{1em}
+\hrulefill
 
 \section*{Problem 5}
 Let $T_1 = T_2 = T_3 = 1$ and $T_n = T_{n-1} + T_{n-2} + T_{n-3}$ for $n \ge 4$. Show that $T_n < 2^n$.
