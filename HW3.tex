@@ -13,6 +13,66 @@ A chocolate-breaking game:
 \end{enumerate}
 Find and justify the winning strategy. (Bonus: try it with friends.)
 
+\medskip
+\solution
+
+we try to solve this using hard induction, splitting this two dimentional
+problem into quantitative one dimentional one, instead of trying to prove
+the claim of
+
+\[
+\text{it takes } mn - 1 \text{ breaks until all pieces of } m \times n
+\text{ chocolate bar are } 1 \times 1 \text{ pieces}
+\]
+
+this hard, so we rewrite the claim as
+
+\[
+P(k) : \text{it takes } k - 1 \text{ breaks until all pieces of } k
+\text{ pieces chocolate are } 1 \times 1 \text{ pieces}
+\]
+
+for the base case where $n_0 = 1$
+
+\[
+\begin{aligned}
+P(1) &= 0 \\
+P(2) &= 1 \\
+P(4) &= 3 && \text{in case of } 2 \times 2 \text{ bar}
+\end{aligned}
+\]
+
+then, we assume P(k) for arbitrary $(k \ge n_0)$, it'll take k - 1 breaks.
+we do one break anywhere, the bar will split up into a smaller bar (than k)
+of q and p --- p + q = k.
+
+\vspace{1em}
+
+from our inductive hypothesis, we're given that a bar of size p, takes p - 1
+breaks until it's all 1 * 1 pieces, and a bar of size q, takes q - 1 breaks
+until it's all 1 * 1 pieces. so ...
+
+\[
+\begin{aligned}
+\text{breaks} &= 1 + (p - 1) + (q - 1) && \text{\{first break from k\} +
+\{inductive of it's result\}} \\
+&= p + q - 1 && k = p + q \\
+&= k - 1
+\end{aligned}
+\]
+
+the inductive case is satisfied, therefore, we'll need k - 1 breaks to
+finish (achieve all 1 * 1 pieces) a k sized bar of chocolate.
+
+\vspace{1em}
+
+our strategy could be to go first if there were even pieces, and go second
+if there were odd pieces --- for a game of two players.
+
+\vspace{1em}
+\hrulefill
+
+
 \section*{Problem 2}
 Consider an $n$-piece jigsaw puzzle assembled by repeatedly joining two existing blocks (starting from single pieces). Prove that assembling the puzzle takes exactly $n-1$ steps.
 
