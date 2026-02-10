@@ -72,9 +72,62 @@ if there were odd pieces --- for a game of two players.
 \vspace{1em}
 \hrulefill
 
+\newpage
 
 \section*{Problem 2}
 Consider an $n$-piece jigsaw puzzle assembled by repeatedly joining two existing blocks (starting from single pieces). Prove that assembling the puzzle takes exactly $n-1$ steps.
+
+\medskip
+\solution
+
+\begin{proof}
+
+we claim that
+
+\[
+P(n) : \text{it takes } n - 1 \text{ steps to complete an } n\text{-piece
+jigsaw}
+\]
+
+for the \textbf{base case} where $n_0 = 1$
+
+\[
+\begin{aligned}
+P(1) &= 0 && \text{we didn't join any pieces yet} \\
+P(2) &= 1 \\
+P(3) &= 2
+\end{aligned}
+\]
+
+by observing this series, we got
+
+\[
+P(k + 1) = P(k) + 1 = k
+\]
+
+since we merge a piece of jigsaw in every iteration, and the jigsaw will be
+complete when $P(n) = n - 1$
+
+\[
+P(k) = P(k - 1) + 1 = k - 1
+\]
+
+so
+
+\[
+\begin{aligned}
+P(k + 1) &= 1 + P(k) \\
+&= 1 + (k - 1) \\
+&= k
+\end{aligned}
+\]
+
+we got $P(k + 1) = k$, which could be formatted to $\boxed{P(n) = n - 1}$.
+    
+\end{proof}
+
+\vspace{1em}
+\hrulefill
 
 \section*{Problem 3}
 Suppose Brew\&Bev gift certificates come in 7-Baht and 4-Baht values, with unlimited supply. Show that any price $p \ge 18$ can be paid with exact change. (Hint: check 22 and 25 Baht.)
