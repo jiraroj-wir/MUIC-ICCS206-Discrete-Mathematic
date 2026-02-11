@@ -386,6 +386,72 @@ we can conclude that the statement: $2^n > T_n$ is true.
 \section*{Problem 6}
 Show that every integer $n \ge 1$ can be written as a sum of distinct powers of two.
 
+\medskip
+\solution
+
+\begin{proof}
+
+we claim that
+
+\[
+P(n) : \forall n \in I^+ \text{ can be written as a sum of distinct powers
+of two}
+\]
+
+for our \textbf{base case} where $n_0 = 1$
+
+\[
+\begin{aligned}
+P(1) &= 2^0 \\
+P(2) &= 2^1 \\
+P(3) &= 2^1 + 2^0
+\end{aligned}
+\]
+
+even though it's quite obvious that this is just base 2 number system, which
+you could just construct $P(k+1)$ by just adding $1_2$ to $P(k)$, I'll not
+do that. we assume $P(k)$ for arbitrary $(k \ge n_0)$, let $C_k$ notates the
+combination of those distinct powers of two that summed up to $k$, and try
+to prove $P(k+1)$ by case as
+
+\begin{enumerate}
+\item case 1: $k + 1 \in \mathbb{O}$
+
+for this one, since $k + 1$ is an odd integer, $k$ would be even, which
+means that $C_k$ set doesn't contain $2^0$, and thus
+
+\[
+C_{k + 1} = C_k + 2^0
+\]
+
+\item case 2: $k + 1 \in \mathbb{E}$
+
+for this one, since $k + 1$ is an even integer, it means that $k + 1$ can be
+written in a form of
+
+\[
+k + 1 = 2k'
+\]
+
+and from our inductive hypothesis, $C_{k'}$ should already satisfied
+$P(k')$, therefore $C_{k+1}$ could be construct by multiplying $C_{k'}$ by
+$2$ (or bitwise shift to the left in binary sense) as
+
+\[
+C_{k+1} = 2 \cdot C_{k'} = {2c \mid c \in C_{k'}}
+\]
+
+which the $2^0$ place is guarantees non-existance.
+\end{enumerate}
+
+since, $P(k+1)$ is unique and representable, the \textbf{induction case}
+holds, and we could conclude that the claim is true
+
+\end{proof}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 7}
 Consider an infinite grid. Start with one unit square whose perimeter is 4 (even). Each subsequent square must share at least one edge with the existing cluster. Prove that the perimeter length remains even regardless of placement order.
 
