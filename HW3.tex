@@ -254,6 +254,65 @@ Show that every positive integer is a product of a power of two and an odd integ
 \medskip
 \solution
 
+we claim that
+
+\[
+P(x) : \forall x \in I^+ \mid x = 2^n \cdot m \text{ where } n \ge 0
+\text{ and } m \in \mathbb{O}
+\]
+
+for the \textbf{base case} where $n_0 = 1$
+
+\[
+\begin{aligned}
+P(1) &= 2^0 \cdot 1 \\
+P(2) &= 2^1 \cdot 1 \\
+P(3) &= 2^0 \cdot 3
+\end{aligned}
+\]
+
+then, we assume P(k) for arbitrary $(k \ge n_0)$, we prove $P(k+1) = 2^{n'}
+\cdot m'$ where $n \ge 0$ and $m \in \mathbb{O}$ --- there'll be two case
+here
+
+\begin{enumerate}
+\item case 1: $k + 1 \in \mathbb{O}$
+
+\vspace{1em}
+
+for this case
+
+\[
+k + 1 = 2^0 \cdot (k + 1)
+\]
+
+since $(k + 1)$ is already an odd number, the induction hypothesis is
+satisfied
+
+\vspace{1em}
+
+\item case 2: $k + 1 \in \mathbb{E}$
+
+since $k + 1$ is an even integer, it could be write in a form of $k + 1 =
+2k'$, and since by the induction hypothesis
+
+\[
+k' = 2^{n'} \cdot m'
+\]
+
+so
+
+\[
+\begin{aligned}
+k + 1 &= 2(2^{n'} \cdot m') \\
+&= 2^{n' + 1} \cdot m'
+\end{aligned}
+\]
+\end{enumerate}
+
+thus, P(k+1) holds, the \textbf{induction case} is satisfy, and we can
+conslude that the given statement is true.
+
 \vspace{1em}
 \hrulefill
 
