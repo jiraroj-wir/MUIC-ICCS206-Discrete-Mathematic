@@ -504,8 +504,61 @@ satisfied, and we conclude the claim is true.
 \section*{Problem 8}
 Is the following proposition true? If not, explain the flaw in the proof.
 
-\textbf{Claim.} If we have $n$ straight lines in the plane ($n \ge 2$) and no two are parallel, then all lines intersect at exactly one common point.
+\vspace{1em}
 
-\textbf{Bogus proof.} Let $P(n)$ be ``every set of $n$ lines intersects at one point''. Base case $n=2$ is true. Assume $P(n)$ and consider $n+1$ lines $\{a_1,\dots,a_{n+1}\}$. From the inductive hypothesis, $a_1,\dots,a_n$ meet at $D$ and $a_2,\dots,a_{n+1}$ meet at $E$. Since both sets contain $a_2$ and $a_3$, $D=E$, so all $n+1$ lines meet at one point.
+Theorem: If we have $n$ straight line in a 2 dimensional plane $(n \ge
+2)$, and none of the line are parallel to each other, then all lines must
+intersect at exactly one and the same point. 
 
+\vspace{1em}
+
+Proof: by induction-ish?.
+
+\vspace{1em}
+
+Inductive Predicate:$P (n) = $ every set of $n$ straight lines intersect
+at exactly one point. 
+
+\vspace{1em}
+
+Base Case: $n = 2$. Every two lines intersect at one
+point. Therefore, $P (2)$ is true. 
+
+\vspace{1em}
+
+Inductive Step: Assume that every $n$ straight lines intersect at one point, we want to show that every $n + 1$
+line intersect at one point.
+
+\vspace{1em}
+\begin{itemize}
+\item Let the set of $n + 1$ be ${a_1, a_2, a_3, \ldots , a_n, a_{n+1}}$
+\item From the inductive hypothesis ${a_1, a_2, a_3, \ldots , a_n}$ must
+intersect at one point since it is a set of $n$ lines. Let us call the
+intersection point for these lines $D$.
+\item Similarly, ${a_2, a_3, a_4 \ldots , a_n, a_{n+1}}$ intersect at
+exactly one point since there are $n$ lines in this set. Let us call this
+point $E$.
+\item Since both $D$ and $E$ are the point where $a_2$ intersects $a_3$. $D$
+and $E$ are therefore the same point.
+\item Therefore, ${a_1, a_2, a_3, \ldots , a_n, a_{n+1}}$ intersect at
+exactly one point.
+\end{itemize}
+
+\medskip
+\solution
+
+The two set of size $n$ derived from the inductive hypothesis: $(a_1, a_2,
+\ldots, a_n)$ and $(a_2, a_3, \ldots, a_{n+1})$ still doesn't cover the
+intersection of $a_1$ and $a_{n+1}$, so we have to do a quick prove on these
+two lines as
+
+\vspace{1em}
+
+\begin{proof}
+since line $a_1$ and $a_{n+1}$ are not parallel, they will have to intersect
+at some point in a 2d plane
+\end{proof}
+
+and this completes the induction case of our prove, and we can confidently
+conclude that our inductive predicate holds true
 \end{document}
