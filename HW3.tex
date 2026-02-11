@@ -452,8 +452,54 @@ holds, and we could conclude that the claim is true
 \vspace{1em}
 \hrulefill
 
+\newpage 
+
 \section*{Problem 7}
 Consider an infinite grid. Start with one unit square whose perimeter is 4 (even). Each subsequent square must share at least one edge with the existing cluster. Prove that the perimeter length remains even regardless of placement order.
+
+\medskip
+\solution
+
+\begin{proof}
+    
+we claim that
+
+\[
+P(n) : \text{the perimeter of any connected figure of } n \text{ unit
+squares is even}
+\]
+
+for the \textbf{base case} where $n_0 = 1$
+
+\[
+P(1) = 4
+\]
+
+then, we assume $P(k)$ for arbitrary $(k \ge n_0)$, the perimeter of
+every connected $k$-square figure is even. 
+
+\vspace{1em}
+to build $P(k+1)$, add one more
+unit square; it contributes four fresh edges, but since it must share at
+least one edge and at most four edges with the existing figure, the net
+change is
+
+\[
+P(k+1) = P(k) + 4 - 2n, \qquad \text{ when } 1 \le n \le 4
+\]
+
+because $P(k)$ is even, let $P(k) = 2q$; then
+
+\[
+P(k+1) = 2q + 4 - 2n = 2(q + 2 - n)
+\]
+
+which is still even. thus, $P(k+1)$ holds, the \textbf{induction case} is
+satisfied, and we conclude the claim is true.
+\end{proof}
+
+\vspace{1em}
+\hrulefill
 
 \section*{Problem 8}
 Is the following proposition true? If not, explain the flaw in the proof.
