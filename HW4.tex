@@ -217,6 +217,50 @@ is always odd.
 \section*{Problem 4}
 A circle is divided into six sectors labeled $1,0,1,0,0,0$. You may pick two neighboring sectors and increase both numbers by 1. Can you make all six numbers equal?
 
+\medskip
+\solution
+
+\begin{proof}
+I initially tried the modulo and the summation approach, it
+didn't work, so \textbf{this proof is hinted by codex-cli}.
+we'd want those adjacent terms, that got increment by 1 to
+cancle out, while preserving the invariant, so
+
+\[
+    I \equiv [x_1 - x_2 + x_3 - x_4 + x_5 - x_6 \equiv 2 \pmod 3]
+\]
+
+initially, we got $(1 - 0 + 1 + 0) \bmod 3 = 2$, the invariant
+holds. for our maintenance phase, by adding 1 to adjacent
+entry, there's a total of 6 combination: $(x_1, x_2)$, $(x_2,
+x_3)$, $(x_3, x_4)$, $(x_4, x_5)$, $(x_5, x_6)$, $(x_6,
+x_1)$ --- as the sign of $x_j$ and $x_{(j + 1) \bmod 6}$
+is opposite, and there should be no negative members, as we
+started by the lowest base number of 0, then increments.
+
+\[
+\begin{aligned}
+x'_j + (-x'_{j+1}) &\equiv (x_j + 1) + (-(x_{j+1} + 1)) \pmod
+3\\
+&= x_j - x_{j+1} \pmod 3
+\end{aligned}
+\]
+
+thus, the invariant holds in every iteration, now for the
+claim of equal numbers on all entry, as there're 6 entries
+
+\[
+6n \not\equiv x_1 - x_2 + x_3 - x_4 + x_5 - x_6 \equiv 2
+\pmod 3
+\]
+
+and therefore, it's impossible to achieve all equal entries,
+and the claim is false.
+\end{proof}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 5}
 On an $8 \times 8$ chessboard with standard coloring you may flip the colors of any entire row or column (all squares in that row/column). Can you reach a configuration with exactly one black square?
 
