@@ -296,5 +296,58 @@ configuration with exactly one black square
 
 \section*{Problem 6}
 An island has 13 blue, 15 red, and 17 green pokemons. When two different-colored pokemons meet, they both transform into the third color (e.g., blue + red $\rightarrow$ two greens). Show that it is impossible to reach a state with only one color remaining. (Hint: consider counts modulo 3.)
+\medskip
+\solution
 
+\begin{proof}
+a list of $(R, G, B) = (15, 17, 13)$, and the fact that
+
+\[
+-1 \equiv 2 \pmod 3
+\]
+
+we declare the invariant as
+
+\[
+I \equiv \big[(R - G) \bmod 2 \land (R - B) \bmod 2 \land (G
+- B) \bmod 2 \land (R + G + B = 45)\big]
+\]
+
+for our maintainance phase,
+
+\[
+15 - 17 \equiv (15 - 1 - (17 - 1)) \pmod 2
+\]
+\[
+15 - 13 \equiv (15 - 1 - (13 - 1)) \pmod 2
+\]
+\[
+17 - 13 \equiv (17 - 1 - (13 - 1)) \pmod 2
+\]
+
+and the total amount of pokemon remain the same, $45$,
+therefore the invariant holds
+
+\vspace{1em}
+
+to reach a state with only one color of Pokemon remaining,
+it must be: $(45, 0, 0)$, $(0, 45, 0)$ or $(0, 0, 45)$. this
+will not satisfy at least a term of I, as
+
+\[
+45 \equiv 1 \pmod 2
+\]
+
+but our first term of
+
+\[
+(R - G) \equiv 0 \pmod 2,
+\]
+
+and therefore, it's impossible for the island to remain a
+single color of Pokemon
+\end{proof}
+
+\vspace{1em}
+\hrulefill
 \end{document}
