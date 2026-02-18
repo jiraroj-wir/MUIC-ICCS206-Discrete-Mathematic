@@ -171,6 +171,49 @@ remaining yoyo is cola flavour.
 \section*{Problem 3}
 Start with the numbers $1,2,3,4,5,6$. Repeatedly pick two numbers $(a,b)$, remove them, and insert $|a-b|$. Show that the final remaining number is always odd.
 
+\medskip
+\solution
+
+\begin{proof}
+we state our invariant as
+\[
+I \equiv \left[\sum_{i=0}^n a_i \equiv 1 \pmod 2\right]
+\]
+where $a_i$ is a member of list $a$, with length $n$.
+initially
+\[
+\sum_{i=1}^6 i = \frac{6 \times 7}{2} = 21;\quad 21 \bmod 2
+= 1
+\]
+the invariant holds, now for each iteration, notate our first
+summation as $S_0 = 21 \in \mathbb{O}$, following $S$ will be
+\[
+S \bmod 2 = (S_0 - a_i - a_j + |a_i - a_j|) \bmod 2 \qquad
+\text{when } 1 \le i, j \le 6
+\]
+it's true that
+\[
+(a_i + a_j) \equiv (a_i - a_j) \equiv |a_i - a_j| \pmod 2
+\]
+
+thus
+
+\[
+\begin{aligned}
+S \bmod 2 &= (S_0 - (a_i + a_j) + |a_i - a_j|) \bmod 2\\
+&= (S_0 - (a_i + a_j) + (a_i + a_j)) \bmod 2\\
+&\equiv S_0 \pmod 2
+\end{aligned}
+\]
+the result remain an odd number in every iteration, our
+invariant holds during the maintenance phase, and it'll hold
+after the loop termination, thus the final remaining number
+is always odd.
+\end{proof}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 4}
 A circle is divided into six sectors labeled $1,0,1,0,0,0$. You may pick two neighboring sectors and increase both numbers by 1. Can you make all six numbers equal?
 
