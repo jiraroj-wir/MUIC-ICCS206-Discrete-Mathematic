@@ -19,6 +19,113 @@ F_n = \frac{1}{\sqrt{5}}\left(\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{
 \medskip
 \solution
 
+\begin{proof}
+  as the nth index of fibonacci sequence is defined as $F_n = F_{n-1}+F_{n-
+    2}$, it's a linear recurrence, and we will try viewed T(n) as $x^n$ (some
+terms to the power of n) --- this will help us find the closed form.
+
+  \[T(n) = x^n\]
+
+  thus
+
+  \begin{align*}
+  T(n) &= T(n-1) + T(n-2) \\
+  x^n &= x^{n-1} + x^{n-2}
+  \end{align*}
+
+  now, we divide those newly created terms by $x^{n-2}$, gives
+
+  \[x^2 - x - 1 = 0\]
+
+  using the quadratic formula on the characteristic equation, we can derived
+  x as
+
+  \[
+  \begin{aligned}
+  x &= \frac{1 \pm \sqrt{1^2 - 4}}{2} \\
+  & = \frac{1 + \sqrt{5}}{2}, \frac{1 - \sqrt{5}}{2}
+  \end{aligned}
+  \]
+
+  it's graspable by example that we cannot just pick one of the two solution
+  (in this recurrence case), as the constant doesn't adds up: $F_1 = 1 =
+  cx^1, F_2 = cx^2$, this along with a few more cases hinted (I still don't
+  understand linear homogeneous recurrence fully) that we should use both
+  solution of x, by the linear combination property:
+
+  \[(A(n), B(n)) \rightarrow (c_1 A(n) + c_2 B(n)) && \quad \text{for solution to linear system}\]
+
+  and, since we were given $F_1 = 1$ and $F_2 = 1$
+
+  \[
+  \begin{aligned}
+    T(1) = 1 &= c_1 \left(\frac{1 + \sqrt{5}}{2}\right) + c_2 \left(\frac{1 - \sqrt{5}}
+  {2}\right)
+  \end{aligned}
+  \]
+
+  and
+
+  \[
+  \begin{aligned}
+    T(2) = 1 &= c_1 \left(\frac{1 + \sqrt{5}}{2}\right)^2 + c_2 \left(\frac{1 -
+  \sqrt{5}}{2}\right)^2
+  \end{aligned}
+  \]
+
+  to solve the two linear system, we let
+
+    \[\left(\frac{1 + \sqrt{5}}{2}\right)^2 = \left(\frac{1 + \sqrt{5}}{2}\right) + 1 && \quad \text{as } x^2 - x - 1 = 0 \text{ from characteristic equation}
+    \]
+
+  and 
+
+    \[\left(\frac{1 - \sqrt{5}}{2}\right)^2 = \left(\frac{1 - \sqrt{5}}{2}\right) + 1
+    \]
+
+    we'll get
+
+\[
+  \begin{aligned}
+    1 &= c_1 \left(\frac{1 + \sqrt{5}}{2}+ 1\right) + c_2 \left(\frac{1 - \sqrt{5}}{2} + 1\right) 
+  \end{aligned}
+  \]
+
+  which could be rearranged as
+
+\[
+  \begin{aligned}
+    1 &= \left(c_1 \frac{1 + \sqrt{5}}{2} + c_2 \frac{1 - \sqrt{5}}{2}\right) + \left(c_1 + c_2\right) 
+  \end{aligned}
+  \]
+
+  which the first term is equivalent to $T(1)$, so 
+
+\[
+  \begin{aligned}
+    1 &= 1 + \left(c_1 + c_2\right) 
+  \end{aligned}
+  \]
+
+  \[c_1 = -c_2\]
+
+
+  then, substitude $c_2$ into $T(1)$
+
+  \[
+  \begin{aligned}
+    T(1) = 1 &= c_1 \left(\frac{1 + \sqrt{5}}{2}\right) - c_1 \left(\frac{1 - \sqrt{5}}
+  {2}\right)
+  \end{aligned}
+  \]
+
+  gives
+
+  \[c_1 = \frac{1}{\left(\frac{1 + \sqrt{5}}{2}\right) - \left(\frac{1 - \sqrt{5}}{2}\right)}\]
+
+  finally, we got $c_1 = \frac{1}{\sqrt(5)}\text{, and } c_2 = -c_1 = -\frac{1}{\sqrt(5)}$; therefore \boxed{$F_n = \frac{1}{\sqrt{5}} \left(\left(\frac{1 + \sqrt{5}}{2}\right)^n - \left(\frac{1 - \sqrt{5}}{2}\right)^n\right)$}
+  \end{proof}
+
 \vspace{1em}
 \hrulefill
 
