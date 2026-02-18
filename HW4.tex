@@ -138,6 +138,36 @@ You bring 5 cola yoyos and 6 grape yoyos for 10 students. Students pick two yoyo
 \end{enumerate}
 The last yoyo in the bag goes to you. Which flavor can you guarantee for yourself, and why?
 
+\medskip
+\solution
+
+\begin{proof}
+notate the amount of grape yoyos with $G$ and coke yoyos with
+$C$, the question provide 3 cases as
+\begin{enumerate}[label={}]
+\item case 1: grape - grape $\mapsto G - 1$
+\item case 2: grape - coke $\mapsto G - 1$
+\item case 3: cola - cola $\mapsto C - 1$
+\end{enumerate}
+we ignore the first and second case, only focus on amount of
+cola yoyos remaining, we state our invarient as
+\[
+I \equiv \text{[ }C \equiv 1 \pmod 2 \text{ ]}
+\]
+initially, we got $C = 5$
+\[
+5 \equiv 1 \pmod 2
+\]
+think of it as for the case of cola - cola, you took 2
+cola yoyos out, eat one, put one back, so $C - 2 + 1 \ge 0
+\rightarrow \inf(C) = 1$ --- that's when our loop invariant
+terminates --- at $C = 1$, $G = 0$, therefore that one
+remaining yoyo is cola flavour.
+\end{proof}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 3}
 Start with the numbers $1,2,3,4,5,6$. Repeatedly pick two numbers $(a,b)$, remove them, and insert $|a-b|$. Show that the final remaining number is always odd.
 
