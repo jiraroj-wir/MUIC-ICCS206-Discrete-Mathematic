@@ -264,6 +264,36 @@ and the claim is false.
 \section*{Problem 5}
 On an $8 \times 8$ chessboard with standard coloring you may flip the colors of any entire row or column (all squares in that row/column). Can you reach a configuration with exactly one black square?
 
+\medskip
+\solution
+
+\begin{proof}
+in an 8x8 chessboard, there's 8 entries per row or column,
+we let B denotes amount of black entries on the board (B = 16
+at the start, so it holds true by the upcoming invariant). In
+every move, in a row or column, say there's n black entries,
+then there'll be 8 - n white entries; after the swap,
+there'll be 8 - n black entries, and n white entries, which
+
+\[
+I \equiv B - n + (8 - n) \in E
+\]
+
+as B is already an even number, adding by another even number
+of $8 - 2n = 2(4 - n)$, the result should also be even, and
+thus our invariant holds throughout our maintenance phase.
+
+\vspace{1em}
+
+now, to achieve a configuration of exactly one black square,
+$B = 1 \in \mathbb{O}$, this is impossible, since B is even
+throughout our invariant process. so you cannot reach a
+configuration with exactly one black square
+\end{proof}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 6}
 An island has 13 blue, 15 red, and 17 green pokemons. When two different-colored pokemons meet, they both transform into the third color (e.g., blue + red $\rightarrow$ two greens). Show that it is impossible to reach a state with only one color remaining. (Hint: consider counts modulo 3.)
 
