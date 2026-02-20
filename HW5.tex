@@ -1,3 +1,5 @@
+\usepackage{dashrule}
+
 \newcommand{\hmwkTitle}{Homework 5}
 \newcommand{\hmwkDueDate}{Sunday, October 24, 2021}
 \newcommand{\hmwkHeaderTitle}{ICCS206 Discrete Mathematic: Homework 5}
@@ -54,6 +56,107 @@ Solve the recurrences:
     \item $T_{i+1} = -T_i + 12T_{i-1}$ with $T_0 = 0$, $T_1 = -7$
 \end{enumerate}
 
+\medskip
+\solution
+
+\begin{enumerate}
+    \item we'd want to write the $i^{th}$ term of $T_i$ in a form of $x^i$, so we let
+
+        \[T_i = x^i\]
+
+        thus 
+
+        \[T_{i+1} = 5T_i - 6T_{i-1} \equiv x^{i+1} = 5x^i - 6x^{i-1}\]
+
+        divide the newly created equation with x^{i-1} gives
+
+        \[x^2 - 5x + 6 = 0\]
+
+        and we solve this characteristic equation with quadratic formula
+
+        \begin{align*}
+            x &= \frac{-(-5) \pm \sqrt{(-5)^2 - 4(1)(6))}}{2(1)} \\
+            x &= \frac{5 + 1}{2}, \frac{5 - 1}{2} \\
+            x &= 2, 3
+        \end{align*}
+
+        the solution could be formed from $2^i$ and $3^i$  by adjusting the two constant attached to them
+
+        \[T_i = c_1 2^i + c_2 3^i\]
+
+        we find those two constant from the given $T_0$ and $T_1$ as
+
+        \begin{align*}
+        T_0 &= 8 = c_1 2^0 + c_2 3^0 \\
+            &= 8 = c_1 + c_2 \tag{i} 
+        \end{align*}
+
+        and 
+
+        \begin{align*}
+        T_1 &= 17 = c_1 2^1 + c_2 3^1 \\
+            &= 17 = 2c_1 + 3c_2 \tag{ii}
+        \end{align*}
+
+        solving this linear system gives $c_1 = 7 \text{, } c_2 = 1$, and our closed form solution is complete
+
+        \[\boxed{T_{i+1} = 7 \cdot 2^{i+1} + 3^{i+1}}\]
+
+        \[\cong \boxed{T_{i} = 7 \cdot 2^{i} + 3^{i}}\]
+
+    \medskip
+    \begin{center}
+    \rule{0.3\linewidth}{0.2pt}
+    \end{center}
+    \medskip    
+
+    \item we'd want to write the $i^{th}$ term of $T_i$ in a form of $x^i$, so we let
+
+        \[T_i = x^i\]
+
+        thus 
+
+        \[T_{i+1} = -T_i + 12T_{i-1} \equiv x^{i+1} = -x^i + 12x^{i-1}\]
+
+        divide the newly created equation with x^{i-1} gives
+
+        \[x^2 + x - 12 = 0\]
+
+        and we solve this characteristic equation with quadratic formula
+
+        \begin{align*}
+            x &= \frac{-1 \pm \sqrt{(1)^2 - 4(1)(-12)}}{2(1)} \\
+            x &= \frac{-1 + 7}{2}, \frac{-1 - 7}{2} \\
+            x &= 3, -4
+        \end{align*}
+
+        the solution could be formed from $3^i$ and $(-4)^i$  by adjusting the two constant attached to them
+
+        \[T_i = c_1 3^i + c_2 (-4)^i\]
+
+        we find those two constant from the given $T_0$ and $T_1$ as
+
+        \begin{align*}
+        T_0 &= 0 = c_1 3^0 + c_2 (-4)^0 \\
+            &= 0 = c_1 + c_2 \tag{i} 
+        \end{align*}
+
+        and 
+
+        \begin{align*}
+        T_1 &= -7 = c_1 3^1 + c_2 (-4)^1 \\
+            &= -7 = 3c_1 - 4c_2 \tag{ii}
+        \end{align*}
+
+        solving this linear system gives $c_1 = -1 \text{, } c_2 = 1$, and our closed form solution is complete
+
+        \[\boxed{T_{i+1} = -1 \cdot 3^{i+1} + (-4)^{i+1}}\]
+
+        \[\cong \boxed{T_{i} = -1 \cdot 3^{i} + (-4)^{i}}\]
+\end{enumerate}
+
+\vspace{1em}
+\hrulefill
 \section*{Problem 7: Roulette Trick Redux}
 Consider a deck with $r$ red cards and $b$ black cards. You always bet on red. If you win a turn you receive twice the bet. The bet-update rule is:
 \begin{itemize}
