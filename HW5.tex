@@ -287,6 +287,32 @@ Use integral bounds to give upper and lower bounds for
 \section*{Problem 3}
 Bossy wants to build an $n$-story house of cards (pyramid style). Derive a formula for the number of cards required for $n$ stories, and determine how many decks are needed for a 10-story house.
 
+\medskip
+\solution
+
+observe the given reference, we'll see that
+\[
+\begin{aligned}
+T(1) &= 2 = 2(1) + (0)\\
+T(2) &= 7 = 2(1+2) + (0+1) \\
+T(3) &= 2(1+2+3) + (0+1+2) = 15 \\
+T(4) &= 2(1+2+3+4) + (0+1+2+3) = 26
+\end{aligned}
+\]
+which we can derive the summation as
+\[
+T(n) = 2\sum_{i = 1}^n i + \sum_{j=0}^{n-1} j
+\]
+simplies to
+\[
+T(n) = 2\frac{n(n+1)}{2} + \frac{(n-1)(n)}{2}
+\]
+now, we find T(10) with that simplified formula as
+\[
+T(10) = 2\frac{10(10+1)}{2} + \frac{(10-1)(10)}{2} = 155
+\]
+we'll need $\frac{T(10)}{52} = \frac{155}{52} = \boxed{3}$ decks of card for a 10-story house.
+
 \vspace{1em}
 \hrulefill
 
