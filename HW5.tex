@@ -938,4 +938,64 @@ Consider a deck with $r$ red cards and $b$ black cards. You always bet on red. I
 \section*{Problem 8: Coupon Bond}
 A coupon bond with face value $F$, maturity $N$ years, and annual payment $P$ pays $P$ each year, plus $F$ at maturity. If the annual interest rate is $r$, how much should you pay for the bond today?
 
+\medskip
+\solution
+
+if we don't accounted for the interest rate, we'll
+  get
+
+  \[
+  result = F + NP
+  \]
+
+  with interest rate $r$,
+
+  \[
+  result = \frac{F}{(1+r)^N} + \sum_{i=1}^N \frac{P}
+  {(1+r)^i}
+  \]
+
+  if we let
+
+  \[
+  S = \frac{P}{1+r} + \frac{P}{(1+r)^2} + \dots +
+  \frac{P}{(1+r)^N}
+  \]
+
+  and
+
+  \[
+  \frac{S}{1+r} = \frac{P}{(1+r)^2} + \frac{P}
+  {(1+r)^3} + \dots + \frac{P}{(1+r)^{N+1}}
+  \]
+
+  their difference gives
+
+  \[
+  \frac{S}{1+r} - S = \frac{P}{(1+r)^{N+1}} - \frac{P}
+  {1+r}
+  \]
+
+  which we could format it as
+
+  \[
+  S = \frac{\frac{P}{(1+r)^{N+1}} - \frac{P}{1+r}}
+  {\frac{1}{1+r} - 1}
+  \]
+
+  plug this into our result (with interest)
+
+  \[
+  result = \frac{F}{(1+r)^N} + \left( \frac{\frac{P}
+  {(1+r)^{N+1}} - \frac{P}{1+r}}{\frac{1}{1+r} - 1}
+  \right)
+  \]
+
+  which simplifies to
+
+  \[
+  \boxed{result = \frac{F}{(1+r)^N} + \frac{P}{r}\left(1 -
+  \frac{1}{(1+r)^N}\right)}
+  \]
+
 \end{document}
