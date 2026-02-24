@@ -808,6 +808,133 @@ Consider a deck with $r$ red cards and $b$ black cards. You always bet on red. I
     \item (Optional) With 20 black and 18 red cards, choose $w$ to maximize gain.
 \end{enumerate}
 
+\medskip
+\solution
+
+\begin{enumerate}
+  \item 
+  \begin{proof}
+  let m be the starting bet; after each round,
+  the bet value ($B_r$) would be
+  \[
+  B_{u+v} = m \cdot w^u \cdot l^v \text{ where } u, v
+  \text{ be amount of win and lost accordingly}
+  \]
+  to prove that permutation of the card doesn't
+  matter, assume the final result of the game
+  \[
+  result = B_1 + B_2 + B_3 + \dots + B_n
+  \text{ where } n = u + v
+  \]
+  if we swap adjacent turns' result, say $B_i$
+  and $B_{i+1}$, where $(1 \leq i \leq n)$, there'll be 4
+  cases as
+  \begin{enumerate}[label={}]
+  \item case 1 and case 2: win-win and lost-lost ---
+  this would resulted in no changes, as win or lost
+  isn't unique.
+  \item case 3: win-lost $\mapsto$ lost-win
+
+  \vspace{1em}
+
+  let $B_i$ be $m \cdot w^u \cdot l^v$, then $B_{i+1}$
+  would be $-m \cdot w^{u+1} \cdot l^v$ in case of
+  $B_i$ is a win; the sum of these two adjacent terms
+  are
+
+  \[
+  B_i + B_{i+1} = m \cdot w^u \cdot l^v (1 - w)
+  \]
+
+  \vspace{1em}
+
+  after the swap, $B'i = - m \cdot w^u \cdot l^v$, and
+  $B'{i+1}$ would be $m \cdot w^u \cdot l^{v+1}$. the
+  sum of these two adjacent terms are
+  \[
+  B'_i + B'_{i+1} = m \cdot w^u \cdot l^v (l-1)
+  \]
+
+  we're given
+  \[
+  w + l = 2 \mapsto l = 2-w
+  \]
+  substitude $l$ with $(2-w)$ gives
+  \[
+  B'_i + B'_{i+1} = m \cdot w^u \cdot l^v (1-2+l) = m
+  \cdot w^u \cdot l^v (l-1)
+  \]
+  thus $B_i + B_{i+1} = B'i + B'{i+1}$
+
+  \vspace{1em}
+  \item case 4: lost-win $\mapsto$ win-lost
+
+  \vspace{1em}
+
+  let $B_i$ be $- m \cdot w^u \cdot l^v$, then
+  $B_{i+1}$ would be $m \cdot w^u \cdot l^{v+1}$
+  in case of $B_i$ is a lost; the sum of these two
+  adjacent terms are
+  \[
+  B_i + B_{i+1} = m \cdot w^u \cdot l^v (l - 1)
+  \]
+
+  \vspace{1em}
+
+  after the swap, $B'_i = m \cdot w^u \cdot l^v$, and
+  $B'_{i+1}$ would be $- m \cdot w^{u+1} \cdot l^v$.
+  the sum of these two adjacent terms are
+  \[
+  B'_i + B'_{i+1} = m \cdot w^u \cdot l^v (1-w)
+  \]
+
+  we're given
+  \[
+  w + l = 2 \mapsto w = 2-l
+  \]
+  substitude (w) with (2-l) gives
+  \[
+  B'_i + B'_{i+1} = m \cdot w^u \cdot l^v (1-2+w) = m
+  \cdot w^u \cdot l^v (w-1)
+  \]
+  thus $B_i + B_{i+1} = B'_i + B'_{i+1}$.
+  \end{enumerate}
+
+  as all cases of adjacent swap could maintain the
+  final result, we could conclude that the final
+  result is independent to the permutation of the
+  cards.
+  \end{proof}
+  \item as we're proven that permutation doesn't matter in \boxed{7.1}, we can reorder the whole permutation, putting all the wins first, followed by all the lost, written as
+        \begin{align*}
+            \text{result} &= \sum_{i = 1}^r mw^i - \sum_{j=1}^b mw^rl^j \text{ where } r = u \text{ and } b = v \\
+            &= m\sum_{i=1}^r w^i - mw^r \sum_{j=1}^b l^j \\
+            &= \boxed{m\left(\frac{w^{r+1} - w}{w-1}\right) - mw^r \left(\frac{l^{b+1} - l}{l-1}\right)}
+        \end{align*} 
+
+    \item at $r=18$ and $b = 20$, let R(w) denotes the final result, with the given $r$ and $b$: 
+
+        \[R(w) = m\sum_{i=1}^{18} w^i - mw^{18} \sum_{j=1}^{20} l^j\]
+
+        or
+
+        \[R(w) = m\left(\frac{w^{19} - w}{w-1}\right) - mw^{18} \left(\frac{l^{21} - l}{l-1}\right)\]
+    
+        where 
+
+        \[l = (2-w)\]
+
+        so
+
+        \[R(w) = m\left(\frac{w^{19} - w}{w-1}\right) - mw^{18} \left(\frac{(2-w)^{21} - (2-w)}{(2-w)-1}\right)\]
+
+        to find the maximum gain, with respect to w, we could find the point where ${R^'}(w) = 0$, which gives \boxed{w = 0.6566} and thus \boxed{l = 1.3434}
+
+  \end{enumerate}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 8: Coupon Bond}
 A coupon bond with face value $F$, maturity $N$ years, and annual payment $P$ pays $P$ each year, plus $F$ at maturity. If the annual interest rate is $r$, how much should you pay for the bond today?
 
