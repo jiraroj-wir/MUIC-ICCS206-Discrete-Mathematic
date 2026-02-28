@@ -33,8 +33,8 @@ For a standard 52-card deck (4 suits, 13 ranks), count the number of 5-card hand
     \item $13 \cdot \dbinom{4}{3} \cdot 4^2 \cdot \dbinom{12}{2}$
     \item $13 \cdot \dbinom{4}{2} \cdot 12 \cdot \dbinom{4}{2} \cdot (52 - 4 - 4)$
     \item $13 \cdot \dbinom{4}{2} \cdot \dbinom{12}{3} \cdot {4^3}$
-    \item $\frac{\dbinom{13}{1} \cdot 4 \cdot\dbinom{12}{1} \cdot 4 \cdot \dbinom{11}{1} \cdot 4 \cdot \dbinom{10}{1} \cdot 4 \cdot \dbinom{9}{1} \cdot 4}{5!} - (9 \cdot 4^5) - (4 \cdot \dbinom{13}{5}) + (10 \cdot 4) \\
-        \simeq \frac{\text{(all cases)}}{\text{(we don't count permutation, count the thing as a set)}} - \text{(straight)} - \text{(flushes)} + \text{(straight flush)}$
+    \item $\frac{\dbinom{13}{1} \cdot 4 \cdot\dbinom{12}{1} \cdot 4 \cdot \dbinom{11}{1} \cdot 4 \cdot \dbinom{10}{1} \cdot 4 \cdot \dbinom{9}{1} \cdot 4}{5!} - (9 \cdot 4^5) - (4 \cdot \dbinom{13}{5}) + (10 \cdot 4)$ \\
+        $\simeq \frac{\text{(all cases)}}{\text{(we don't count permutation, count the thing as a set)}} - \text{(straight)} - \text{(flushes)} + \text{(straight flush)}$
 \end{enumerate}
 
 \vspace{1em}
@@ -45,6 +45,14 @@ How many integers from 1 to 1000 are divisible by 2 or 5 or 7?
 
 \medskip
 \solution
+
+using the 3 ways inclusion-exclusion diagram, we got 
+
+\[|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C| \]
+
+which gives
+
+\[ \left\lfloor \frac{1000}{2} \right\rfloor + \left\lfloor \frac{1000}{5} \right\rfloor + \left\lfloor \frac{1000}{7} \right\rfloor - \left\lfloor \frac{1000}{10} \right\rfloor - \left\lfloor \frac{1000}{14} \right\rfloor - \left\lfloor \frac{1000}{35} \right\rfloor + \left\lfloor \frac{1000}{70} \right\rfloor\]
 
 \vspace{1em}
 \hrulefill
@@ -60,6 +68,13 @@ Decide whether each function $A \to B$ is injective, surjective, or bijective.
 
 \medskip
 \solution
+
+\begin{enumerate}
+    \item neither injective, nor surjective
+    \item injective only
+    \item surjective only
+    \item injective and surjective, so it's bijective as well
+\end{enumerate}
 
 \vspace{1em}
 \hrulefill
