@@ -122,6 +122,32 @@ Four players each receive 13 cards from a shuffled 52-card deck.
 \medskip
 \solution
 
+\begin{enumerate}
+    \item $\frac{52!}{13! \cdot 13! \cdot 13! \cdot 13!}$
+    \item $\dbinom{39}{13} \cdot \frac{39!}{13! \cdot 13! \cdot 13!} \simeq \text{(no hearts for Tow+)} \cdot \text{(pick other three as normal)}$ 
+    \item $\dbinom{39}{13} \cdot \dbinom{26}{13} \cdot \frac{26!}{13! \cdot 13!} \simeq \text{(no hearts for Tow+)} \cdot \text{no hearts for Boss} \cdot \text{(pick other two as normal)}$ 
+    \item $\dbinom{39}{13} \cdot \dbinom{26}{13} \cdot \dbinom{13}{13} \cdot \frac{13!}{13!} \simeq \text{(no hearts for Tow+)} \cdot \text{no hearts for Boss} \cdot \text{no hearts for Majeed} \cdot \text{(pick other guy as normal)}$ 
+    \item impossible, as for four players to not get any hearts, there must be $13 \cdot 4 = 52$ non-heart card in the deck, but a deck of cards already contain 52 cards, so that's not possible, as there must also be 13 heart cards in the deck. 
+    \item let $A_1, A_2, A_3 \text{ and } A_4$ be each of the four players, as they're the same
+
+        \[
+            |A_1 \cup A_2 \cup A_3 \cup A_4| = \dbinom{4}{1}|A_i| + \dbinom{4}{2}|A_i \cap A_j| - \dbinom{4}{3}|A_i \cap A_j \cap A_k| + \dbinom{4}{4}{|A_i \cap A_j \cap A_k \cap A_l|}
+        \]
+
+        as $0 \le i, j, k, l \le 4$, and we get each of the terms from the previous: (5.2), (5.3), (5.4) and (5.5) for first, second, thrid and fourth term accordingly. 
+
+    \item the probability they had to redeal the card is $\frac{P_{\text{someone has no heart card}}}{P_{\text{all}}}$ which is
+
+        \begin{align*}
+            \frac{(5.6)}{(5.1)} &= \frac{\binom{4}{1}\binom{39}{13}\frac{39!}{13!\cdot13!
+        \cdot13!} - \binom{4}{2}\binom{39}{13}\binom{26}{13}\frac{26!}{13!\cdot13!}
+        + \binom{4}{3}\binom{39}{13}\binom{26}{13}\binom{13}{13}\frac{13!}{13!}}
+        {\frac{52!}{13!\cdot13!\cdot13!\cdot13!}} \\
+        &= \frac{1621364909}{31750677980} \approx \boxed{0.05106552086923342}
+        \end{align*}
+
+\end{enumerate}
+
 \vspace{1em}
 \hrulefill
 
