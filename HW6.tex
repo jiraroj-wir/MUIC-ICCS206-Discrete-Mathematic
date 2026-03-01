@@ -173,6 +173,12 @@ A robot moves only up or right along grid lines from $(0,0)$ to $(20,10)$.
 \medskip
 \solution
 
+\begin{enumerate}
+    \item as the treasure is placed at (20, 10), the robot will have to do 20 right move, and 10 up move. if we list all the moves the robot makes until it reaches the treasure --- that'll be a list of length 30; then pick the slot that the robot will move up --- so 10 slots --- and that's  \boxed{$\dbinom{30}{10}$} paths.
+    \item do it just like the first one, but as you have to pass the checkpoint, and you couldn't go backwards, it's traveling from (0, 0) to (10, 5), then (10, 5) to (20, 10), and as these two are sequencial, we use product rule --- which is \boxed{$\dbinom{15}{5} \cdot \dbinom{15}{5}$}
+    \item just like the second one, subtract all path that pass the pitfall: (0, 0) to (4, 3) and (4, 3) to (10, 5); and we have to consider the sequencial paths from (10, 5) to (20, 10) as well --- which gives \boxed{$\dbinom{15}{5} \cdot \dbinom{15}{5} - \dbinom{7}{3}\dbinom{8}{2}\dbinom{15}{5}$}
+\end{enumerate}
+
 \vspace{1em}
 \hrulefill
 
