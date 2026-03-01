@@ -210,4 +210,9 @@ How many ways can $n$ books be placed on $k$ distinguishable shelves?
 \medskip
 \solution
 
+\begin{enumerate}
+    \item as all books are the same, this is just a star and bar question, and we can do \boxed{$\dbinom{n+k-1}{k-1}$} --- think of it as having n stars, than to separate them into k section, we use $(k-1)$ bars; assign order to each of the $(n+k-1)$ stars and bars, and we pick the $(k-1)$ index that we'll assign a bar.
+    \item if all books are distinct, then we have to consider for n (books) permutation on all those books --- so \boxed{$\dbinom{n+k-1}{k-1} \cdot n!$}
+\end{enumerate}
+
 \end{document}
