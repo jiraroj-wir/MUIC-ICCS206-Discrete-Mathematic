@@ -279,4 +279,35 @@ AJ Piti will give a rare banana yoyo to Bossy, Tow$+$, or John, each equally lik
 \end{itemize}
 AJ tells Bossy that John will not get the yoyo. Bossy concludes his chance is $1/2$, while Tow$+$ claims it remains $1/3$ for Bossy and $2/3$ for himself. Determine the actual probabilities for Bossy and Tow$+$ given AJ's statement. (Hint: draw a probability tree.)
 
+\medskip
+\solution
+
+it can't be 50:50, as it felt like the way AJ responds favours the guy that doesn't gets mentioned, at first, say (Bossy, Tow+, John) $\equiv$ (B, T, J), we know that
+
+\[P(B)=P(T)=P(J)=\tfrac{1}{3}\]
+
+let $R_j$ be AJ responds as John, we'll get 
+
+\[
+P(R_j\mid B)=\tfrac{1}{2},\quad P(R_j\mid T)=1,\quad P(R_j\mid J)=0,
+\]
+
+as, if Tow+ is the winner, AJ would have to say John --- that's probability of 1.0 of AJ saying John; and if Bossy is the winner, there's a probability of $\dfrac{1}{2}$ that AJ will say Tow+(another half is for John) --- that's only $\dfrac{1}{2}$ of assurance that Bossy will win if AJ says John. 
+
+\vspace{1em}
+
+so, the change of Bossy winning after AJ responds as John is
+
+\[
+P(B\mid R_j)=\frac{\frac{1}{2}\cdot\frac{1}{3}}{\frac{1}{2}}=\boxed{\tfrac{1}{3}},\qquad
+\]
+
+and Tow+'s change of winning after AJ responds with John is
+
+\[
+P(T\mid R_j)=\frac{1\cdot\frac{1}{3}}{\frac{1}{2}}=\boxed{\tfrac{2}{3}}.
+\]
+
+so Tow$+$ is correct.
+
 \end{document}
