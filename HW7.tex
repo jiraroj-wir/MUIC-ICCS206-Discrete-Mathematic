@@ -11,6 +11,25 @@
     \item Same domain as above. How many solutions satisfy $\sum_{i=1}^k x_i \le n$?
 \end{enumerate}
 
+\medskip
+\solution
+
+\begin{enumerate}
+    \item we try to frame this as star-and-bars, and as 0 (empty) is allowed, we have to shift the set of $\{1, 2, 3, ...\}$ down by 1, as ${{x^'}_i} = x_i - 1$, so the set would be $\{0, 1, 2, ...\}$ instead; and the summation becomes 
+        \[\sum_{i=1}^k {{x^'}_i} = n - k\]
+        now, to find all the permutation that satisfy the given criteria, we can apply star-and-bars --- $(n-k)$ stars, k bars --- which gives $\dbinom{(n - k) + k - 1}{k-1} = \boxed{\dbinom{n-1}{k-1}}$ solutions
+    \item just like (1.1), we try to frame it as star-and-bars by introduces 0 (emptyness) into the set, but for this one, we have to accounted for the inequality by assigning anouther spot `s` such that $0 \le s \le (n-k)$, and the summation becomes
+        \[\sum_{i=1}^k {{x^'}_i} + s= n - k\]
+        the star counts remain the same, but as we add another spot/ box, there are now k+1 bars --- which gives $\dbinom{(n - k) + k + 1 - 1}{k + 1 - 1}= \boxed{\dbinom{n}{k}}$ solutions.
+    \item this one is just (1.1), but the set already in a proper condition for star-and-bars; so from the summation, just plug it in --- n stars, k bars --- $\boxed{\dbinom{n+k-1}{k-1}}$ solutions.
+    \item like (1.2), followed from (1.3), we could rewrite the summation as
+        \[\sum_{i=1}^k x_i + s = n \quad \text{ where } 0 \le s \le n\]
+        the star counts remain the same, but as we add another spot/ box, there are now k+1 bars --- which gives $\boxed{\dbinom{n+k}{k}}$
+\end{enumerate}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 2}
 From 100 classes you record whether AJ Piti ends late and whether it rains:
 \[
