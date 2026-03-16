@@ -690,7 +690,7 @@ and as
 we can format this relation as
 
 \[
-    \text{MTBF}{\text{sys}}=\frac{1}{\lambda{\text{sys}}}=\boxed{\frac{600000}{13}\ \text{hr}}.
+    \text{MTBF}{\text{sys}}=\frac{1}{\lambda{\text{sys}}}=\boxed{\frac{600000}{13}\ \text{hr}}
 \]
 \end{enumerate}
 \vspace{1em}
@@ -699,4 +699,20 @@ we can format this relation as
 \section*{Problem 7: Classroom Flirtation}
 In a $4 \times 4$ grid of desks, each seat is randomly and independently assigned to a boy or a girl with equal probability. A boy flirts with any adjacent girl (up/down/left/right). Each boy can flirt with multiple neighboring girls. Find the expected number of flirtations. (Hint: express as a sum of indicator variables.)
 
+\medskip
+\solution
+
+we count all possible pairings, there's $4 \cdot 3$ pairs horizontally, and another $4 \cdot 3$ pairs vertically, so that's 24 pairs in total. 
+
+\vspace{1em}
+
+now, there's 4 possible configuration of the pair, let $B$ denotes boy, and $G$ denotes girl as 
+
+\[G = \{BB, BG, GB, GG\}\]
+
+the two configuration that will cause flirtation is $BG$ and $GB$, which each got a $\frac14$ probability, so 
+
+\[P(\text{flirtation}) = \frac12\cdot\frac12 + \frac12\cdot\frac12 = \frac12\]
+
+applies that to the amount of edges, $E(X) = 24 \cdot \frac12$, so $\boxed{12}$ flirtations is expected
 \end{document}
