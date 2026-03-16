@@ -110,6 +110,146 @@ You pick a number from 1--6 and roll three fair, independent dice.
     \item What is the variance in the taped-dice case?
 \end{enumerate}
 
+\medskip
+\solution
+
+\begin{enumerate}
+    \item we let $X$ be our profit/loss in baht, for the independent-dice case, on each die the probability that your chosen number appears is $\frac{1}{6}$ and the probability that it does not appear is $\frac{5}{6}$
+
+        \vspace{1em}
+
+    let $K$ be the number of times our chosen number shows up among the three dice, and as there's only two choice,
+    \[
+    K\sim \mathrm{Binomial}(3,\tfrac16).
+    \]
+
+    so the probabilities are
+    \[
+    P(K=0)=\left(\frac56\right)^3=\frac{125}{216},
+    \]
+    \[
+    P(K=1)=\binom31\left(\frac16\right)\left(\frac56\right)^2=\frac{75}{216},
+    \]
+    \[
+    P(K=2)=\binom32\left(\frac16\right)^2\left(\frac56\right)=\frac{15}{216},
+    \]
+    \[
+    P(K=3)=\left(\frac16\right)^3=\frac{1}{216}
+    \]
+
+    and the return for each K's value are, 
+
+    \[
+    X=
+    \begin{cases}
+    -1,& K=0,\\
+    1,& K=1,\\
+    2,& K=2,\\
+    4,& K=3.
+    \end{cases}
+    \]
+
+    now, we just add the weight to those probabilities as 
+
+    \[
+    E(X)=(-1)\frac{125}{216}+(1)\frac{75}{216}+(2)\frac{15}{216}+(4)\frac{1}{216}
+    \]
+
+        and the expacted gain per pay is $\boxed{E(X)=-\frac{2}{27}\text{ baht}}$ per play --- as it's negative, you loss money, so \boxed{\text{it's not so wise to play the game}}. 
+
+    \medskip
+    \begin{center}
+    \rule{0.3\linewidth}{0.2pt}
+    \end{center}
+    \medskip
+
+    \item to find the variance, we use this theorem of
+
+    \[
+    \mathrm{Var}(X)=E(X^2)-[E(X)]^2 
+    \]
+
+    we already know $E(X)$, so we only need to compute $E(X^2)$ as
+
+    \begin{align*}
+        E(X^2)&=(-1)^2\frac{125}{216}+(1)^2\frac{75}{216}+(2)^2\frac{15}{216}+(4)^2\frac{1}{216} \\
+        &=\frac{125+75+60+16}{216} \\
+        &=\frac{276}{216}=\frac{23}{18}
+    \end{align*}
+
+    hence, 
+
+    \begin{align*}
+        \mathrm{Var}(X) &= \frac{23}{18}-\left(-\frac{2}{27}\right)^2\\ &= \boxed{\frac{1855}{1458}}
+    \end{align*}
+
+    \medskip
+    \begin{center}
+    \rule{0.3\linewidth}{0.2pt}
+    \end{center}
+    \medskip
+
+    \item as the three dice are taped together, making them always show the same face, there are only two possibilities, illustrate by a probability tree as
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, node distance=14mm, scale=0.95]
+\node (r) {throw};
+\node[right=20mm of r] (w) {all three match your number};
+\node[below=14mm of w] (l) {none match your number};
+
+\draw[->] (r) -- node[above] {$\tfrac16$} (w);
+\draw[->] (r) -- node[right] {$\tfrac56$} (l);
+
+\node[right=10mm of w] {$\rightarrow X=4$};
+\node[right=10mm of l] {$\rightarrow X=-1$};
+\end{tikzpicture}
+\end{center}
+
+so the expected value is
+\[
+E(X)=4\cdot\frac16+(-1)\cdot\frac56=\frac{4-5}{6}
+= \boxed{-\frac{1}{6}}
+\]
+
+
+
+    \medskip
+    \begin{center}
+    \rule{0.3\linewidth}{0.2pt}
+    \end{center}
+    \medskip
+
+\item using the same theorem of
+
+\[
+\mathrm{Var}(X)=E(X^2)-[E(X)]^2 
+\]
+    
+we find $E(X^2)$ as
+
+\[
+E(X^2)=4^2\cdot\frac16+(-1)^2\cdot\frac56
+=16\cdot\frac16+1\cdot\frac56
+=\frac{21}{6}
+=\frac72.
+\]
+
+so
+
+\[
+\mathrm{Var}(X)=\frac72-\left(-\frac16\right)^2
+=\frac72-\frac1{36}.
+\]
+
+therefore
+\[
+\boxed{\mathrm{Var}(X)=\frac{125}{36}}
+\]
+\end{enumerate}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 3: Monopoly Doubles}
 In Monopoly you roll two fair dice. If you roll doubles, you take another turn immediately; three consecutive doubles send you to jail (advance = 0). Let ``advance'' be the total spaces moved during the turn.
 \begin{enumerate}[label=\arabic*.]
