@@ -259,6 +259,127 @@ In Monopoly you roll two fair dice. If you roll doubles, you take another turn i
     \item Using the law of total expectation, find the overall expected advance for a turn.
 \end{enumerate}
 
+\medskip
+\solution
+
+\begin{enumerate}
+\item 
+
+among the $36$ equally likely outcomes of two dice, there are $6$ doubles and $30$ non-doubles, the possible non-double sums are just all non-double outcomes:
+\[
+    (1,2),(1,3), ..., (1, 6), (2, 1), (2, 3), ..., (6,5).
+\]
+to find this quick, we do 
+        \[\text{\{the sum of all combinations\}} - \text{\{the sum of all pairs\}}\]
+
+which is
+        
+\[
+    36 \cdot 7 - (2+4+6+8+10+12) = 252-42=210.
+\]
+
+therefore
+
+\[
+    E(\text{expected advance} \mid \text{first roll not double}) = \frac{210}{30} = \boxed{7}
+\]
+
+\medskip
+\begin{center}
+\rule{0.3\linewidth}{0.2pt}
+\end{center}
+\medskip
+
+\item the total advance is \{the first pair sum\} + \{the second sum\}
+
+all possible combination of the first roll ($S_1$) would be
+
+\[
+    S_1 = \{(1,1), (2,2), ..., (6,6)\}
+\]
+
+so
+
+\[
+E(\text{first sum}\mid \text{being a double pair})
+= \frac{2+4+6+8+10+12}{6}
+= \frac{42}{6}
+= 7.
+\]
+
+        for the second roll, it got conditioned of being a non-double, which from (3.1), we already derived as
+\[
+E(\text{second sum}\mid \text{non-double})=7.
+\]
+
+hence
+
+\[
+    E(\text{expected advance}\mid \text{first double, second non-double})
+= 7+7
+= \boxed{14}
+\]
+
+\medskip
+\begin{center}
+\rule{0.3\linewidth}{0.2pt}
+\end{center}
+\medskip
+
+\item similar to (3.2), as the third roll is non-double, there's no jailing, and the expected advance should be 
+\[
+    A=\text{\{first double\}}+\text{\{second double\}}+\text{\{third non-double\}}
+\]
+
+and as we already derived that both double and non-double case will be expected to advance by 7
+
+\[
+    E(\text{expected advance}\mid \text{first two doubles, third not double})
+= 7+7+7
+= \boxed{21}
+\]
+
+\medskip
+\begin{center}
+\rule{0.3\linewidth}{0.2pt}
+\end{center}
+\medskip
+
+\item now we compute the expected advance for a full turn using the law of total expectation, there are four disjoint cases:
+
+\begin{itemize}
+    \item case 1: first roll is not a double,
+    \item case 2: first roll is a double, second is not,
+    \item case 3: first two rolls are doubles, third is not,
+    \item case 4: first three rolls are all doubles, so you go to jail and advance $0$.
+\end{itemize}
+
+which the probabilities for non-double are $\frac{30}{36}=\frac56 \text{, and the probability for double is } \frac{6}{36}=\frac16$, so
+
+\[
+    P(\text{case 1})=\frac56 && \quad \text{--- with corresponding weight of 7}
+\]
+\[
+P(\text{case 2})=\frac16\cdot\frac56=\frac{5}{36} && \quad \text{--- with corresponding weight of 14}
+\]
+\[
+P(\text{case 3})=\frac16\cdot\frac16\cdot\frac56=\frac{5}{216} && \quad \text{--- with corresponding weight of 21}
+\]
+\[
+P(\text{case 4})=\frac16\cdot\frac16\cdot\frac16=\frac{1}{216} && \quad \text{--- with corresponding weight of 0}
+\]
+
+hence
+\begin{align*}
+    E(\text{expected advance})
+    &= \frac56\cdot 7 + \frac{5}{36}\cdot 14 + \frac{5}{216}\cdot 21 + \frac{1}{216}\cdot 0 \\
+    &= \frac{35}{6}+\frac{35}{18}+\frac{35}{72} \\
+    &=\boxed{\frac{595}{72}} \text{ advancements per turn}
+\end{align*}
+\end{enumerate}
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 4: Uniform Generators}
 Let $X$ be uniform on $\{1,\dots,10\}$ and $Y$ be uniform on $\{201,\dots,210\}$, independent of $X$. Quickly compute:
 \begin{enumerate}[label=\arabic*.]
