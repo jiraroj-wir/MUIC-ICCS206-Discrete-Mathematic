@@ -135,6 +135,26 @@ Let $X$ be uniform on $\{1,\dots,10\}$ and $Y$ be uniform on $\{201,\dots,210\}$
     \item $\mathrm{Var}(2X + Y + 10)$
 \end{enumerate}
 
+\medskip
+\solution
+
+\begin{enumerate}
+\item just find the mid-point as $E(X)=\frac{1+10}{2}=\boxed{\frac{11}{2}}$
+\item as $\mathrm{Var(X)}=\frac{n^2-1}{12}$ where $n=10$ $\rightarrow \mathrm{Var}(X)=\frac{10^2-1}{12}=\boxed{\frac{99}{12}}$
+\item $E(200+X)=200+E(X)=\boxed{200+\frac{11}{2}}$
+\item same mid-point idea, $E(Y)=\frac{201+210}{2}=E(200+X)=\boxed{205.5}$
+\item it's $\boxed{\frac{99}{12}}$, as X and Y got the same amount of members, varience is dependent on the difference between each members in the field, and it's mean, as X and Y got the same amount of members, varience is dependent on the difference between each members in the field, and it's mean.
+\item use the varience identity of $E(X^2) = \mathrm{Var}(X)+E(X)^2=\frac{99}{12}+\left(\frac{11}{2}\right)^2=\boxed{38.5}$
+\item $E(Y^2)=\mathrm{Var}(Y)+E(Y)^2 = \frac{99}{12} + (205.5)^2 = \boxed{42238.5}$
+\item same distribution as $E\big((200+X)^2\big)$, so $\boxed{42238.5}$
+\item $E\big((200+X)Y\big)=E(200+X) \cdot E(Y)=205.5^2=\boxed{42230.25}$ --- it differs from $E(Y^2)$ by exactly $\mathrm{Var}(Y)$ because $E(Y^2)=E(Y)^2+\mathrm{Var}(Y)$, but
+$E\big((200+X)Y\big)=E(Y)^2$ 
+\item $E(2X+Y+10)=2E(X)+E(Y)+10=\boxed{226.5}$
+\item $\mathrm{Var}(2X+Y+10)=4 \cdot \mathrm{Var}(X)+\mathrm{Var}(Y)=4\cdot \tfrac{99}{12}+\tfrac{99}{12}=\boxed{\tfrac{165}{4}}$
+\end{enumerate}
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 5: Stocks}
 Two stocks start at 1 Baht today. In one year:
 \[
