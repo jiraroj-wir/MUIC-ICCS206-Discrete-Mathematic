@@ -659,6 +659,43 @@ A computer has one hard drive (MTBF $300{,}000$ hr), one graphics card (MTBF $12
     \item MTBF of the entire computer.
 \end{enumerate}
 
+\medskip
+\solution
+
+to calculate the probability of survival, we use 
+
+\[P(\text{survive}) = e^{-\lambda {t}}\]
+
+therefore, the probability of failure is
+
+\[P(\text{failure} = 1 - P(\text{survive}) = 1 - e^{-\lambda {t}}\]
+
+\begin{enumerate}
+\item hard drive rated at $300{,}000$ hr, so $p_h=1-e^{-1/300000}\approx \boxed{3.33\times 10^{-6}}$
+\item graphics card rated at $120{,}000$ hr, so $p_g=1-e^{-1/120000}\approx \boxed{8.33\times 10^{-6}}$
+\item power supply rated at $100{,}000$ hr, so $p_s=1-e^{-1/100000}\approx \boxed{1.00\times 10^{-5}}$
+\item use probability of survival for this one, 
+\[
+    P_{\text{(survive for 5 hours)}}=e^{\Big(-5\Big(\tfrac{1}{300000}+\tfrac{1}{120000}+\tfrac{1}{100000}\Big)\Big)}
+= e^{-\frac{5\cdot 13}{600000}}\approx \boxed{0.999892}
+\]
+\item say the entire computer is made up of only the hard drive, graphics card and a power supply, then 
+
+    \[\lambda_{\text{sys}}=\tfrac{1}{300000}+\tfrac{1}{120000}+\tfrac{1}{100000}=\tfrac{13}{600000}\]
+
+and as 
+
+\[\lambda = \frac{1}{MTBF}\]
+
+we can format this relation as
+
+\[
+    \text{MTBF}{\text{sys}}=\frac{1}{\lambda{\text{sys}}}=\boxed{\frac{600000}{13}\ \text{hr}}.
+\]
+\end{enumerate}
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 7: Classroom Flirtation}
 In a $4 \times 4$ grid of desks, each seat is randomly and independently assigned to a boy or a girl with equal probability. A boy flirts with any adjacent girl (up/down/left/right). Each boy can flirt with multiple neighboring girls. Find the expected number of flirtations. (Hint: express as a sum of indicator variables.)
 
