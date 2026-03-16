@@ -11,6 +11,90 @@ Sam, May, and AJ Piti challenge Zaza to a split-the-pool coin-toss game where ev
     \item Evil Plan 2: Suppose Zaza agrees to bet first each turn. Propose a better strategy for the trio and compute Zaza's expected profit/loss per turn under that strategy.
 \end{enumerate}
 
+\medskip
+\solution
+
+\begin{enumerate}
+    \item for plan 1, we fix Zaza's bet to H (as if zaza bet T, the probability tree is symmetry --- so only half the tree is enough), sam and aj would pick the opposite side to zaza every turn (so, we just bemind of this, for zaza's net calculation), and may just do random pick (say with the probability of $\frac{1}{2}$ for each H and T). we can draw the probability tree as
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, node distance=12mm, scale=0.95]
+\node (r) {zaza bets $H$};
+\node[right=10mm of r] (mH) {may bets $H$};
+\node[below=20mm of mH] (mT) {may bets $T$};
+\draw[->] (r) -- node[above] {$\tfrac12$} (mH);
+\draw[->] (r) -- node[right] {$\tfrac12$} (mT);
+
+  \node[right=14mm of mH] (cHH) {coin = $H$};
+  \node[below=7mm of cHH] (cHT) {coin = $T$};
+  \draw[->] (mH) -- node[above] {$\tfrac12$} (cHH);
+  \draw[->] (mH) -- node[right] {$\tfrac12$} (cHT);
+
+  \node[right=14mm of mT] (cTH) {coin = $H$};
+  \node[below=7mm of cTH] (cTT) {coin = $T$};
+  \draw[->] (mT) -- node[above] {$\tfrac12$} (cTH);
+  \draw[->] (mT) -- node[right] {$\tfrac12$} (cTT);
+
+    \node[right=4mm of cHH] {$:$ zaza + may + \{sam or aj\} $\rightarrow$ zaza net $= \frac{24}{3}-6 = +2$};
+    \node[right=4mm of cHT] {$:$ \{sam or aj\} $\rightarrow$ zaza net $= -6$};
+    \node[right=4mm of cTH] {$:$ zaza + \{sam or aj\} $\rightarrow$ zaza net $= \frac{24}{2}-6 = +6$};
+    \node[right=4mm of cTT] {$:$ {sam or aj} $\rightarrow$ zaza net $= -6$};
+
+\end{tikzpicture}
+\end{center}
+
+now we just read off the leaves of the tree and weight them by their probabilities:
+\[
+E\text{(zaza)} = \tfrac14\cdot(+2) + \tfrac14\cdot(-6) + \tfrac14\cdot(+6) + \tfrac14\cdot(-6) = \boxed{-1\ \text{baht/turn}}
+\]
+
+    \medskip
+    \begin{center}
+    \rule{0.3\linewidth}{0.2pt}
+    \end{center}
+    \medskip
+
+\item the linearity of expectation for any random variables $A,B,C$ is
+\[
+    E(A+B+C) = E(A) + E(B) + E(C)
+\]
+
+        in this case (plan 1), the winner set never is empty, so there's no money lost from the table (as someone always win), so
+\[
+E(\text{sam}+\text{may}+\text{aj}) = E((\text{sam}+\text{may}+\text{aj}+\text{zaza}) - \text{zaza}) = 0 - E(\text{zaza}) = \boxed{+1\ \text{baht/turn}}.
+\]
+
+    \medskip
+    \begin{center}
+    \rule{0.3\linewidth}{0.2pt}
+    \end{center}
+    \medskip
+
+\item have two of the trio follow zaza, and one bet opposed to her. using the same representatoin approach, we get
+
+  \begin{center}
+  \begin{tikzpicture}[>=stealth, node distance=16mm, scale=0.95]
+  \node (r) {zaza bets $H$; trio picks $(H,H,T)$};
+  \node[right=8mm of r] (cH) {coin = $H$};
+  \node[below=6mm of cH] (cT) {coin = $T$};
+  \draw[->] (r) -- node[above] {$\tfrac12$} (cH);
+  \draw[->] (r) -- node[right] {$\tfrac12$} (cT);
+
+  \node[right=4mm of cH] {$:$ zaza + two of the three trio $\rightarrow$ zaza net $= \frac{24}{3}-6 = +2$};
+  \node[right=4mm of cT] {$:$ the opposer $\rightarrow$ zaza net $= -6$};
+  \end{tikzpicture}
+  \end{center}
+
+  therefore
+  \[
+  E(\text{zaza}) = \frac12\cdot(+2)+\frac12\cdot(-6)=
+  \boxed{-2\ \text{baht/turn}}
+  \]
+  \end{enumerate}
+
+\vspace{1em}
+\hrulefill
+
 \section*{Problem 2: Dice Game}
 You pick a number from 1--6 and roll three fair, independent dice.
 \begin{itemize}
