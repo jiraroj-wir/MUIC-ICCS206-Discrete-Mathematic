@@ -568,4 +568,22 @@ For each graph below determine whether it can be drawn in one stroke (an Euler t
     \includegraphics[width=0.45\textwidth]{HW9_onestroke.png}
 \end{center}
 
+\medskip
+\solution
+
+\begin{theorem}
+Euler walk exists if and only if the graph is connected and
+there are exatly 0 or 2 odd degree vertex. Morover, if there are 2 odd degree vertices
+then, the Euler walk must start and end at the 2 odd degree vertices.
+\end{theorem}
+
+say, the graph on the left is $G_1$; $G_1$ got 2 vertex with odd degree: D and E; so there exist an euler walk, and surely, the graph can be drawn with a single stroke as \boxed{\text{DF, FB, BD, DA, AB, BE, EA, AC, CE}} path.
+
+\vspace{1em}
+
+for the right graph, $G_2$, as there're 4 vertices with odd degrees: C, D, E, F; according to euler's theorem, the graph \boxed{\text{does not has an euler walk}}.
+
+\end{tikzpicture}
+\end{center}
+
 \end{document}
