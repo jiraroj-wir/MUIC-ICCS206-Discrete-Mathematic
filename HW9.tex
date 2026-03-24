@@ -7,6 +7,7 @@
 \usetikzlibrary{matrix}
 \usetikzlibrary{graphs, graphdrawing}
 \usegdlibrary{force}
+\usetikzlibrary{arrows.meta}
 
 \section*{Problem 1: Minesweeper Theorem}
 Given any rectangular Minesweeper board, show that the sum of all hint numbers equals the sum of all hint numbers on the complement board (bombs and empty cells swapped).
@@ -422,10 +423,50 @@ and it'll take at least \boxed{\text{3 hours}} to complete.
 \vspace{1em}
 \hrulefill
 
-\medskip
 \section*{Problem 4: DNA Sequence}
 Shotgun sequencing produced the subsequences $\{\text{CAT}, \text{TCA}, \text{AAG}, \text{GCT}, \text{GCA}, \text{ATC}, \text{CAA}, \text{AGC}\}$.
 What is the original sequence?
+
+\medskip
+\solution
+
+draw it out as a directed graph of
+
+\begin{center}
+\begin{tikzpicture}[
+    v/.style={circle, draw, minimum width=6mm, minimum height=6mm, inner sep=0pt},
+    edge/.style={->, line width=0.8pt},
+    >=Stealth[length=3.5mm, width=2mm]
+]
+
+% --- nodes ---
+\node[v] (CA) at (0,0) {CA};
+\node[v] (AA) at (2,1.5) {AA};
+\node[v] (AG) at (4,0.5) {AG};
+\node[v] (GC) at (3,-1.5) {GC};
+\node[v] (CT) at (1.5,-2) {CT};
+\node[v] (TC) at (-1,-1) {TC};
+\node[v] (AT) at (-2,1) {AT};
+
+% --- edges ---
+\draw[edge] (CA) -- node[midway, above] {5} (AA);
+\draw[edge] (CA) -- node[midway, above] {2} (AT);
+\draw[edge] (AA) -- node[midway, above] {6} (AG);
+\draw[edge] (AG) -- node[midway, above] {7} (GC);
+\draw[edge] (GC) -- node[midway, above] {8} (CT);
+\draw[edge] (TC) -- node[midway, above] {4} (CA);
+\draw[edge] (AT) -- node[midway, above] {3} (TC);
+
+% curved edge
+\draw[edge, bend left=20] (GC) to node[midway, above] {1} (CA);
+
+\end{tikzpicture}
+\end{center}
+
+to find an euler walk on this directed graph, we start with $GC$, as it's one of the two vertices with odd degree (another one is $CT$, that won't work), so the original sequence is \boxed{\text{GCATCAAGCT}}. 
+
+\vspace{1em}
+\hrulefill
 
 \section*{Problem 5: Yoyo Distribution Network}
 As CEO you must ship yoyos between distribution centers at minimum total cost. The network and edge costs are shown below (note $AC$ costs $2$, $AD$ costs $1$, and $EB$ costs $3$). Find the optimal routing plan.
