@@ -468,11 +468,99 @@ to find an euler walk on this directed graph, we start with $GC$, as it's one of
 \vspace{1em}
 \hrulefill
 
+\newpage
+
 \section*{Problem 5: Yoyo Distribution Network}
 As CEO you must ship yoyos between distribution centers at minimum total cost. The network and edge costs are shown below (note $AC$ costs $2$, $AD$ costs $1$, and $EB$ costs $3$). Find the optimal routing plan.
+% use the tikz illustration instead, it's close enough
+%\begin{center}
+%    \includegraphics[width=0.5\textwidth]{HW9_network.png}
+%\end{center}
+
+\medskip
+\solution
+
+we have to find a minimum spanning tree for the shortest distribution route, as shorter distance means less traveling time. to find a MST, we use Kruskal's algorithm: by repeatedly picking the smallest edge that doesn't cause a cycle in the graph. 
+
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{HW9_network.png}
+\begin{tikzpicture}[
+    x=1.3cm, y=1.3cm,
+    v/.style={circle, draw, minimum size=6mm, inner sep=0pt}
+]
+
+% --- nodes ---
+\node[v] (I) at (0,3) {I};
+\node[v] (H) at (-2,1.5) {H};
+\node[v] (A) at (0,1.5) {A};
+\node[v] (E) at (2,1.5) {E};
+
+\node[v] (B) at (0,0) {B};
+\node[v] (C) at (2,0) {C};
+
+\node[v] (D) at (-2,-1) {D};
+\node[v] (F) at (0,-2) {F};
+\node[v] (G) at (3,-0.5) {G};
+
+% --- edges ---
+\draw (I) -- node[left] {3} (H);
+\draw[thick, red] (I) -- node[right] {1} (E);
+\draw[thick, red] (I) -- node[right] {1} (A);
+\draw[thick, red] (H) -- node[above] {1} (A);
+\draw (H) -- node[left] {2} (D);
+\draw (A) -- node[above] {2} (E);
+\draw[thick, red] (A) -- node[left] {1} (B);
+\draw (A) -- node[pos=0.4, right] {2} (C); % AC = 2
+\draw[thick, red] (B) -- node[above] {1} (D);
+\draw (B) -- node[below] {2} (F);
+\draw (B) -- node[above] {2} (C);
+\draw[thick, red] (E) -- node[right] {1} (C);
+\draw (E) -- node[above] {2} (G);
+\draw[thick, red] (C) -- node[above] {1} (G);
+\draw (C) -- node[right] {2} (F); % CF = 2
+\draw (D) -- node[below] {3} (F);
+\draw (A) -- node[pos=0.4, right] {3} (F);
+\draw (B) -- node[pos=0.6, right] {3} (E); % EB = 3
+\draw[thick, red] (F) -- node[pos=0.6, below right] {1} (G); % FG = 1
+
+\end{tikzpicture}
 \end{center}
+
+and, we'll be left with a MST with combined weight of \boxed{8} --- the MST could vary, but the weight will remain the same, and it could look something like this
+
+\begin{center}
+\begin{tikzpicture}[
+    x=1.3cm, y=1.3cm,
+    v/.style={circle, draw, minimum size=6mm, inner sep=0pt}
+]
+
+% --- nodes ---
+\node[v] (I) at (0,3) {I};
+\node[v] (H) at (-2,1.5) {H};
+\node[v] (A) at (0,1.5) {A};
+\node[v] (E) at (2,1.5) {E};
+
+\node[v] (B) at (0,0) {B};
+\node[v] (C) at (2,0) {C};
+
+\node[v] (D) at (-2,-1) {D};
+\node[v] (F) at (0,-2) {F};
+\node[v] (G) at (3,-0.5) {G};
+
+% --- MST edges only (formerly red) ---
+\draw (I) -- node[right] {1} (E);
+\draw (I) -- node[right] {1} (A);
+\draw (H) -- node[above] {1} (A);
+\draw (A) -- node[left] {1} (B);
+\draw (B) -- node[above] {1} (D);
+\draw (E) -- node[right] {1} (C);
+\draw (C) -- node[above] {1} (G);
+\draw (F) -- node[pos=0.6, below right] {1} (G);
+
+\end{tikzpicture}
+\end{center}
+
+\vspace{1em}
+\hrulefill
 
 \section*{Problem 6: One-Stroke Game}
 For each graph below determine whether it can be drawn in one stroke (an Euler trail). If so, exhibit the stroke order; otherwise explain why it is impossible.
