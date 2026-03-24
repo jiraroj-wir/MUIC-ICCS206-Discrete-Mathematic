@@ -5,6 +5,8 @@
 
 \usepackage{tikz}
 \usetikzlibrary{matrix}
+\usetikzlibrary{graphs, graphdrawing}
+\usegdlibrary{force}
 
 \section*{Problem 1: Minesweeper Theorem}
 Given any rectangular Minesweeper board, show that the sum of all hint numbers equals the sum of all hint numbers on the complement board (bombs and empty cells swapped).
@@ -367,6 +369,60 @@ E & \{ \text{Oliver, Cummings, Larson} \}
 \]
 What is the minimum number of hours needed and how should the meetings be scheduled?
 
+\medskip
+\solution
+
+draw out venn-euler's diagram of the meetings, we'll see that 
+
+\begin{center}
+\begin{algin*}
+    &\text{A overlaps with B, D} \\
+    &\text{B overlaps with A, D} \\
+    &\text{C overlaps with D, E} \\
+    &\text{D overlaps with A, B, C} \\
+    &\text{E overlap with C} \\
+\end{algin*}
+\end{center}
+
+we then construct the graph of meetings, with respect to the overlaps, and color it as
+
+\newpage
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\graph [
+    spring layout,
+    nodes={circle, draw, minimum size=6mm, inner sep=0pt},
+    node distance=2cm
+] {
+    A[fill=blue!20] -- B[fill=orange!25],
+    A -- D[fill=green!25],
+    B -- D,
+    C[fill=blue!20] -- D,
+    C -- E[fill=orange!25]
+};
+\end{tikzpicture}
+\end{figure}
+
+so, the schedule would be 
+
+\begin{center}
+\begin{tabular}{c|l}
+\textbf{hour} & \textbf{meeting} \\
+\hline
+1 & A, C \\
+2 & B, E \\
+3 & D \\
+\end{tabular}
+\end{center}
+
+and it'll take at least \boxed{\text{3 hours}} to complete.
+
+\vspace{1em}
+\hrulefill
+
+\medskip
 \section*{Problem 4: DNA Sequence}
 Shotgun sequencing produced the subsequences $\{\text{CAT}, \text{TCA}, \text{AAG}, \text{GCT}, \text{GCA}, \text{ATC}, \text{CAA}, \text{AGC}\}$.
 What is the original sequence?
