@@ -258,6 +258,8 @@ so every edge connects an indicator to a bomb, so each edge will contribute one 
 \vspace{1em}
 \hrulefill
 
+\newpage
+
 \section*{Problem 2: Graph Isomorphism}
 For the three graphs $G_1$, $G_2$, $G_3$ below determine which pairs, if any, are isomorphic. For each isomorphic pair provide an explicit isomorphism; otherwise briefly justify why they are not isomorphic.
 
@@ -265,6 +267,90 @@ For the three graphs $G_1$, $G_2$, $G_3$ below determine which pairs, if any, ar
     \centering
     \includegraphics[width=0.8\textwidth]{HW9_graphs.png}
 \end{figure}
+
+\medskip
+\solution
+
+we first look at common properties of each graph. firstly, all the vertex in $G_1$ and $G_2$ have a degree of 3, but $v_7 \text{ and } v_{10}$ of $G_3$ got a degree of 4, so there's no way $G_3$ is isomorphic to $G_1$ and $G_2$, and we can just ignore it. 
+
+\vspace{1em}
+
+then, we check the combined degrees of $G_1$ and $G_2$, we got
+
+\[\sum\text{degree}(v_1) = \sum\text{degree}(v_2) = 30 && \quad \text{ where } v_1 \in G_1, v_2 \in G_2\]
+
+I supposed there's better way to check for isomorphism, but in this case, there's only 10 nodes, so I just look at some pattens and guess the placement; try substitude $G_1$ into $G_2$ while remain the properties of $G_1$. 
+
+\vspace{1em}
+
+after a few tries, i got
+
+\begin{center}
+\begin{tikzpicture}[x=1.3cm, y=1.3cm]
+\tikzset{
+    v/.style={circle, draw, minimum size=6mm, inner sep=0pt}
+}
+
+% --- outer pentagon ---
+\node[v] (v1) at (0,2) {1};
+\node[v] (v2) at (2,1) {10};
+\node[v] (v3) at (1,-1) {4};
+\node[v] (v4) at (-1,-1) {5};
+\node[v] (v5) at (-2,1) {9};
+
+% --- inner nodes ---
+\node[v] (v6)  at (0,1)   {2};
+\node[v] (v7)  at (0.4,-0.2) {3};
+\node[v] (v8)  at (-0.8,0.4) {8};
+\node[v] (v9)  at (0.8,0.4)  {7};
+\node[v] (v10) at (-0.4,-0.2) {6};
+
+% --- outer cycle ---
+\draw (v1)--(v2)--(v3)--(v4)--(v5)--(v1);
+
+% --- connections ---
+\draw (v1)--(v6);
+\draw (v2)--(v9);
+\draw (v3)--(v7);
+\draw (v4)--(v10);
+\draw (v5)--(v8);
+
+% --- inner edges ---
+\draw (v6)--(v7);
+\draw (v6)--(v10);
+\draw (v7)--(v8);
+\draw (v8)--(v9);
+\draw (v9)--(v10);
+
+\end{tikzpicture}
+\end{center}
+
+so 
+
+\[
+\varphi : V(G_1) \to V(G_2)
+\]
+\[
+\varphi = \{\, 
+1 \mapsto 1,\;
+2 \mapsto 10,\;
+3 \mapsto 4,\;
+4 \mapsto 5,\;
+5 \mapsto 9,\;
+6 \mapsto 2,\;
+7 \mapsto 3,\;
+8 \mapsto 8,\;
+9 \mapsto 7,\;
+10 \mapsto 6
+\,\}
+\]
+
+therefore
+
+\[\boxed{G_1 \cong G_2}\]
+
+\vspace{1em}
+\hrulefill
 
 \section*{Problem 3: Meeting Scheduler}
 We need to schedule executive meetings without conflicts (each person attends at most one meeting at a time). Each meeting lasts one hour.
